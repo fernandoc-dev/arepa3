@@ -2086,7 +2086,7 @@
 
 										<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-										<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+										<div style="background: url('<?php echo base_url("assets/canvas/images/world-map.png")?>') no-repeat center center; background-size: 100%;">
 											<address>
 												<strong>Headquarters:</strong><br>
 												795 Folsom Ave, Suite 600<br>

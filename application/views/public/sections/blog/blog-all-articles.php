@@ -1737,14 +1737,13 @@
 
 							<div class="row col-mb-50">
 								<div class="col-md-4">
-
 									<div class="widget clearfix">
 
 										<img src="<?php echo base_url("assets/canvas/images/footer-widget-logo.png")?>" alt="Image" class="footer-logo">
 
 										<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-										<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+										<div style="background: url('<?php echo base_url("assets/canvas/images/world-map.png")?>') no-repeat center center; background-size: 100%;">
 											<address>
 												<strong>Headquarters:</strong><br>
 												795 Folsom Ave, Suite 600<br>

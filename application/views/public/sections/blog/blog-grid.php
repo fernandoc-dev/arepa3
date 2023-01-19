@@ -20,7 +20,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Blog - Masonry | Canvas</title>
+	<title>Blog - Grid | Canvas</title>
 
 </head>
 
@@ -1519,7 +1519,7 @@
 
 			<div class="container clearfix">
 				<h1>Blog</h1>
-				<span>Our Latest News in Masonry Layout</span>
+				<span>Our Latest News in Grid Layout</span>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Blog</li>
@@ -1536,12 +1536,12 @@
 
 					<!-- Posts
 					============================================= -->
-					<div id="posts" class="post-grid row grid-container gutter-30">
+					<div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
 
 						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="grid-inner">
 								<div class="entry-image">
-									<a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>" data-lightbox="image"><img src="<?php echo base_url("assets/canvas/images/blog/small/17.jpg")?>" alt="Standard Post with Image"></a>
+									<a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>" data-lightbox="image"><img src="<?php echo base_url("assets/canvas/images/blog/grid/17.jpg")?>" alt="Standard Post with Image"></a>
 								</div>
 								<div class="entry-title">
 									<h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
@@ -1554,19 +1554,19 @@
 									</ul>
 								</div>
 								<div class="entry-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
 									<a href="blog-single.html" class="more-link">Read More</a>
 								</div>
 							</div>
 						</div>
 
-					   	<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-					   		<div class="grid-inner">
+						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
+							<div class="grid-inner">
 								<div class="entry-image">
 									<iframe src="https://player.vimeo.com/video/87701971" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
 								</div>
 								<div class="entry-title">
-									<h2><a href="blog-single-full.html">This is a Standard post with an Embedded Video</a></h2>
+									<h2><a href="blog-single-full.html">This is a Standard post with a Vimeo Video</a></h2>
 								</div>
 								<div class="entry-meta">
 									<ul>
@@ -1576,7 +1576,7 @@
 									</ul>
 								</div>
 								<div class="entry-content">
-									<p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis velit deserunt!</p>
+									<p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem consectetur pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis velit deserunt!</p>
 									<a href="blog-single-full.html" class="more-link">Read More</a>
 								</div>
 							</div>
@@ -1588,9 +1588,9 @@
 									<div class="fslider" data-arrows="false" data-lightbox="gallery">
 										<div class="flexslider">
 											<div class="slider-wrap">
-												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/10.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/masonry/10.jpg")?>" alt="Standard Post with Gallery"></a></div>
-												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/20.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/masonry/20.jpg")?>" alt="Standard Post with Gallery"></a></div>
-												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/21.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/masonry/21.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/10.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/10.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/20.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/20.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/21.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/21.jpg")?>" alt="Standard Post with Gallery"></a></div>
 											</div>
 										</div>
 									</div>
@@ -1614,18 +1614,22 @@
 
 						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="grid-inner">
-								<div class="entry-image">
-									<blockquote>
-										<p>"When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That's relativity."</p>
-										<footer>Albert Einstein</footer>
-									</blockquote>
+								<div class="entry-image clearfix">
+									<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301161123&amp;auto_play=false&amp;hide_related=true&amp;visual=true"></iframe>
+								</div>
+								<div class="entry-title">
+									<h2><a href="blog-single.html">This is an Embedded SoundCloud Post</a></h2>
 								</div>
 								<div class="entry-meta">
 									<ul>
-										<li><i class="icon-calendar3"></i> 3rd Mar 2021</li>
-										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 23</a></li>
-										<li><a href="#"><i class="icon-quote-left"></i></a></li>
+										<li><i class="icon-calendar3"></i> 28th Apr 2021</li>
+										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 16</a></li>
+										<li><a href="#"><i class="icon-music2"></i></a></li>
 									</ul>
+								</div>
+								<div class="entry-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
+									<a href="blog-single.html" class="more-link">Read More</a>
 								</div>
 							</div>
 						</div>
@@ -1633,20 +1637,41 @@
 						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="grid-inner">
 								<div class="entry-image">
-									<div class="portfolio-single-image masonry-thumbs grid-container grid-4" data-big="3" data-lightbox="gallery">
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/2.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/2.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/3.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/3.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/6-1.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/6-1.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/6-2.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/6-2.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/12.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/12.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/12-1.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/12-1.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/13.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/13.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/18.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/18.jpg")?>" alt="Image"></a>
-										<a class="grid-item" href="<?php echo base_url("assets/canvas/images/blog/full/19.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/small/19.jpg")?>" alt="Image"></a>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/SZEflIVnhH8" allowfullscreen></iframe>
+								</div>
+								<div class="entry-title">
+									<h2><a href="blog-single-full.html">This is a Standard post with a Youtube Video</a></h2>
+								</div>
+								<div class="entry-meta">
+									<ul>
+										<li><i class="icon-calendar3"></i> 30th Apr 2021</li>
+										<li><a href="blog-single-full.html#comments"><i class="icon-comments"></i> 34</a></li>
+										<li><a href="#"><i class="icon-film"></i></a></li>
+									</ul>
+								</div>
+								<div class="entry-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
+									<a href="blog-single-full.html" class="more-link">Read More</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
+							<div class="grid-inner">
+								<div class="entry-image clearfix">
+									<div class="fslider" data-animation="fade" data-pagi="false" data-lightbox="gallery">
+										<div class="flexslider">
+											<div class="slider-wrap">
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/2.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/2.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/3.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/3.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/12.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/12.jpg")?>" alt="Standard Post with Gallery"></a></div>
+												<div class="slide"><a href="<?php echo base_url("assets/canvas/images/blog/full/13.jpg")?>" data-lightbox="gallery-item"><img src="<?php echo base_url("assets/canvas/images/blog/grid/13.jpg")?>" alt="Standard Post with Gallery"></a></div>
+											</div>
+										</div>
 									</div>
 								</div>
 								<div class="entry-title">
-									<h2><a href="blog-single-thumbs.html">This is a Standard post with Masonry Thumbs Gallery</a></h2>
+									<h2><a href="blog-single-thumbs.html">This is a Standard post with Fade Gallery</a></h2>
 								</div>
 								<div class="entry-meta">
 									<ul>
@@ -1656,7 +1681,7 @@
 									</ul>
 								</div>
 								<div class="entry-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo!</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
 									<a href="blog-single-thumbs.html" class="more-link">Read More</a>
 								</div>
 							</div>
@@ -1665,17 +1690,21 @@
 						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="grid-inner">
 								<div class="entry-image">
-									<a href="https://themeforest.net" class="entry-link" target="_blank">
-										Themeforest.net
-										<span>- https://themeforest.net</span>
-									</a>
+									<a href="<?php echo base_url("assets/canvas/images/blog/full/1.jpg")?>" data-lightbox="image"><img src="<?php echo base_url("assets/canvas/images/blog/grid/1.jpg")?>" alt="Standard Post with Image"></a>
+								</div>
+								<div class="entry-title">
+									<h2><a href="blog-single.html">This is a Standard post with another Preview Image</a></h2>
 								</div>
 								<div class="entry-meta">
 									<ul>
-										<li><i class="icon-calendar3"></i> 17th Mar 2021</li>
-										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 26</a></li>
-										<li><a href="#"><i class="icon-link"></i></a></li>
+										<li><i class="icon-calendar3"></i> 5th May 2021</li>
+										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 6</a></li>
+										<li><a href="#"><i class="icon-camera-retro"></i></a></li>
 									</ul>
+								</div>
+								<div class="entry-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
+									<a href="blog-single.html" class="more-link">Read More</a>
 								</div>
 							</div>
 						</div>
@@ -1683,41 +1712,38 @@
 						<div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="grid-inner">
 								<div class="entry-image">
-									<div class="card">
-										<div class="card-body">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, fuga optio voluptatibus saepe tenetur aliquam debitis eos accusantium!
-										</div>
-									</div>
+									<iframe width="480" height="270" src="https://www.dailymotion.com/embed/video/x18murk" allowfullscreen></iframe>
+								</div>
+								<div class="entry-title">
+									<h2><a href="blog-single-full.html">This is a Standard post with a Dailymotion Video</a></h2>
 								</div>
 								<div class="entry-meta">
 									<ul>
-										<li><i class="icon-calendar3"></i> 21st Mar 2021</li>
-										<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 11</a></li>
-										<li><a href="#"><i class="icon-align-justify2"></i></a></li>
+										<li><i class="icon-calendar3"></i> 11th May 2021</li>
+										<li><a href="blog-single-full.html#comments"><i class="icon-comments"></i> 9</a></li>
+										<li><a href="#"><i class="icon-film"></i></a></li>
 									</ul>
+								</div>
+								<div class="entry-content">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur!</p>
+									<a href="blog-single-full.html" class="more-link">Read More</a>
 								</div>
 							</div>
 						</div>
 
 					</div><!-- #posts end -->
 
-					<div class="page-load-status">
-						<div class="css3-spinner infinite-scroll-request">
-							<div class="css3-spinner-ball-pulse-sync">
-								<div></div>
-								<div></div>
-								<div></div>
-							</div>
-						</div>
-						<div class="alert alert-warning center infinite-scroll-last mx-auto" style="max-width: 20rem;">End of content</div>
-						<div class="alert alert-warning center infinite-scroll-error mx-auto" style="max-width: 20rem;">No more pages to load</div>
-					</div>
-
 					<!-- Pagination
 					============================================= -->
-					<div class="center d-none">
-						<a href="blog-masonry-page-2.html" class="button button-3d button-dark button-large button-rounded load-next-posts">Load more..</a>
-					</div>
+					<ul class="pagination mt-5 pagination-circle justify-content-center">
+						<li class="page-item disabled"><a class="page-link" href="#"><i class="icon-angle-left"></i></a></li>
+						<li class="page-item active"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#"><i class="icon-angle-right"></i></a></li>
+					</ul>
 
 				</div>
 			</div>
@@ -1737,6 +1763,7 @@
 
 							<div class="row col-mb-50">
 								<div class="col-md-4">
+
 									<div class="widget clearfix">
 
 										<img src="<?php echo base_url("assets/canvas/images/footer-widget-logo.png")?>" alt="Image" class="footer-logo">
@@ -1988,36 +2015,6 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="<?php echo base_url("assets/canvas/js/functions.js")?>"></script>
-
-	<script>
-
-		jQuery(window).on( 'load', function(){
-
-			var $container = $('#posts');
-
-			$container.infiniteScroll({
-				path: '.load-next-posts',
-				history: false,
-				status: '.page-load-status'
-			});
-
-			$container.on( 'load.infiniteScroll', function( event, response, path ) {
-				var $items = $( response ).find('#posts .entry');
-				// append items after images loaded
-				$items.imagesLoaded( function() {
-					$container.append( $items );
-					$container.isotope( 'insert', $items );
-					setTimeout( function(){
-						$container.isotope('layout');
-						SEMICOLON.initialize.resizeVideos();
-						SEMICOLON.widget.loadFlexSlider();
-						SEMICOLON.widget.masonryThumbs();
-					}, 1000 );
-				});
-			});
-
-		});
-	</script>
 
 </body>
 </html>

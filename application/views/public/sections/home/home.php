@@ -24,7 +24,8 @@
 	<link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/custom.css")?>" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=7B6ED6")?>" type="text/css" />
+	<!-- <link rel="stylesheet" href="<?php //echo base_url("assets/canvas/css/colors.php?color=7B6ED6")?>" type="text/css" /> -->
+	<link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=71698a")?>" type="text/css" />
 
 	<!-- Document Title
 	============================================= -->

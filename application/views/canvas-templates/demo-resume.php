@@ -30,7 +30,6 @@
 	============================================= -->
 	<title>Resume | Canvas</title>
 
-</head>
 
 <body class="stretched">
 
@@ -604,4 +603,5 @@
 	</script>
 
 </body>
+</head>
 </html>

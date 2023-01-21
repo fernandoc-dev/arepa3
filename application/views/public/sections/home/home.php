@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Media Agency Demo Specific Stylesheet -->
-    <link rel="stylesheet" href="<?php echo base_url("assets/canvas/demos/media-agency/media-agency.css") ?>"
+    <link rel="stylesheet" href="<?php echo base_url("assets/canvas/demos/media-agency/media-agency.css")?>"
         type="text/css" />
     <!-- / -->
 
@@ -101,13 +101,13 @@
                                             class="icon-line2-envelope"></i>
                                         <div>Contact</div>
                                     </a></li>
+                                <li class="menu-item"><a class="menu-link" href="#" data-href="#section-code"><i
+                                            class="icon-line2-grid"></i>
+                                        <div>Code</div>
+                                    </a></li>
                                 <li class="menu-item"><a class="menu-link" href="#" data-href="#section-articles"><i
                                             class="icon-line2-pencil"></i>
                                         <div>Articles</div>
-                                    </a></li>
-                                <li class="menu-item"><a class="menu-link" href="#" data-href="#footer"><i
-                                            class="icon-line2-grid"></i>
-                                        <div>Contact</div>
                                     </a></li>
                             </ul>
 
@@ -198,7 +198,7 @@
                                         <h3 class="font-weight-normal ls2" style="color: #FFF">Django</h3>
                                         <p style="color:#AAA;">Django is a high-level Python web framework that
                                             encourages rapid development and clean, pragmatic design.<br>Strongest
-                                            advantage: Django is the heavyweight of Python's framework.</p>
+                                            advantage: Django is the heavyweight of Python's frameworks.</p>
                                     </div>
                                 </div>
                             </div>
@@ -328,13 +328,16 @@
                                     problems and deliver high-quality solutions. I am always looking for new challenges
                                     and opportunities to learn and grow as a developer. Thank you for visiting my
                                     website!</p>
-                                <a href="#" class="button button-large button-border button-black button-dark ml-0"><i
+                                <a target="_blank" href="<?php echo base_url("assets/arepa3/others/Backend developer - Fernando Carrillo.pdf")?>" class="button button-large button-border button-black button-dark ml-0"><i
                                         class="icon-line-cloud-download"></i> Download CV</a>
                             </div>
                         </div>
                     </div>
+                    <div class="video-wrap">
+                        <div class="video-overlay d-sm-block d-md-none" style="background: rgba(255,255,255,0.9);">
+                        </div>
+                    </div>
                 </div>
-
 
                 <div id="section-contact" class="section page-section m-0">
                     <div class="container">
@@ -344,7 +347,7 @@
                                     <h2 class="font-secondary">I'd appreciate a message</h2>
                                 </div>
                                 <form class="row mb-0" id="template-contactform" name="template-contactform"
-                                    action="include/form.php" method="post">
+                                    action="<?php echo base_url("")?>" method="post">
                                     <div class="form-process">
                                         <div class="css3-spinner">
                                             <div class="css3-spinner-scaler"></div>
@@ -388,14 +391,53 @@
                     </div>
                 </div>
 
+                <div id="section-code" class="section m-0 page-section dark">
+                    <div class="container clearfix">
+
+                        <div class="dark">
+                            <div class="heading-block">
+                                <h2 class="font-secondary">Let's code.</h2>
+                                <span class="mt-0">I believe that sharing knowledge is one of the best ways to
+                                    learn.</span>
+                            </div>
+                        </div>
+                        <div class="row col-mb-50">
+
+                            <div class="col-md-6">
+                                <div class="emphasis-title bottommargin-sm">
+                                    <h3 style="font-size: 30px;" class="font-body font-weight-semibold">Algorithm
+                                        practices</h2>
+                                </div>
+                                <p style="color: #777; margin-bottom: 25px;" class="lead">Here you can find programming
+                                    logic exercises from books or websites like HackerRank or LeetCode, as well as
+                                    technical tests.</p>
+                                <a href="#" class="button button-large button-border button-black button-dark ml-0"><i
+                                        class="icon-line-cog"></i>Algorithm practices</a>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="emphasis-title bottommargin-sm">
+                                    <h3 style="font-size: 30px;" class="font-body font-weight-semibold">My programming
+                                        notes</h2>
+                                </div>
+                                <p style="color: #777; margin-bottom: 25px;" class="lead">Here you can find different
+                                    courses product of my summaries about the technologies that I've studied.</p>
+                                <a href="#" class="button button-large button-border button-black button-dark ml-0"><i
+                                        class="icon-line-book-open"></i>Notes</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div id="section-articles" class="section page-section m-0 bg-color clearfix" style="padding: 100px 0">
                     <div class="container clearfix">
 
                         <div class="dark">
                             <div class="heading-block">
                                 <h2 class="font-secondary">Most read articles.</h2>
-                                <span class="mt-0">I believe that sharing knowledge is one of the best ways to learn. If
-                                    you want to learn more about [topic], I invite you to read my blog.</span>
+                                <span class="mt-0">I enjoy sharing my thoughts and insights on various topics related to
+                                    my field. If you're interested in reading more, please check out my blog.</span>
                             </div>
                         </div>
 
@@ -487,11 +529,31 @@
 		============================================= -->
         <footer id="footer" class="page-section dark border-0 p-0 clearfix" style="background-color: #1C1C1C;">
             <div class="container clearfix">
-                <!-- Footer Widgets
-				============================================= -->
-                <div class="footer-widgets-wrap clearfix" style="padding: 20px 0"></div>
+                <div class="si-sticky d-none d-lg-block">
+                <a target="_blank" href="https://www.linkedin.com/in/fernandoc-dev/" class="social-icon si-linkedin si-dark" data-animate="bounceInLeft">
+                        <i class="icon-linkedin"></i>
+                        <i class="icon-linkedin"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/fernandoc-dev" class="social-icon si-github si-dark" data-animate="bounceInLeft" data-delay="100">
+                        <i class="icon-github"></i>
+                        <i class="icon-github"></i>
+                    </a>
+                </div>
             </div>
+
+            <!-- Copyrights
+			============================================= -->
+            <div id="copyrights" style="background-color: #111;">
+                <div class="container clearfix">
+
+                    <div class="w-100 text-center">
+                        <p class="mb-3">Copyrights &copy; 2023 All Rights Reserved by FERNANDO CARRILLO.</p>
+                    </div>
+
+                </div>
+            </div><!-- #copyrights end -->
         </footer><!-- #footer end -->
+
 
     </div><!-- #wrapper end -->
 

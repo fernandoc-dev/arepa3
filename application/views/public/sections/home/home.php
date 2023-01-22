@@ -33,13 +33,13 @@
     <!-- / -->
 
     <!-- <link rel="stylesheet" href="<?php //echo base_url("assets/canvas/css/colors.php?color=7B6ED6")?>" type="text/css" /> -->
-    <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=71698a") ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=5e5e5e") ?>" type="text/css" />
 
     <link rel="shortcut icon" href="<?php echo base_url("assets/arepa3/images/common/favicon.png") ?>" />
 
     <!-- Document Title
 	============================================= -->
-    <title>Resume | Canvas</title>
+    <title>Home</title>
 
 </head>
 
@@ -107,7 +107,7 @@
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link" href="#" data-href="#section-articles"><i
                                             class="icon-book2"></i>
-                                        <div>Articles</div>
+                                        <div>Blog</div>
                                     </a></li>
                             </ul>
 
@@ -347,7 +347,7 @@
                             <div class="col-md-6 offset-md-3">
                                 <div class="heading-block">
                                     <h2 class="font-secondary">I'd appreciate a message</h2>
-                                    <span><i class="icon-email2"></i> fer@fernandoc.dev</span>
+                                    <span><i class="icon-email mr-2"></i>Email: fer@fernandoc.dev</span>
                                 </div>
                                 <form class="row mb-0" id="contact" name="contact" action="<?php echo base_url("")?>"
                                     method="post">
@@ -373,8 +373,9 @@
                                             required></textarea>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <button class="button button-black ml-0 topmargin-sm" type="submit" id="submit"
-                                            name="submit" value="submit">Send Message</button>
+                                        <button class="button button-border button-black button-dark ml-0 mt-4"
+                                            type="submit" id="submit" name="submit" value="submit"><i
+                                                class="icon-email2"></i><span> Send Message</span></button>
                                     </div>
                                 </form>
                             </div>
@@ -394,41 +395,48 @@
                         </div>
                         <div class="row col-mb-50">
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <div class="emphasis-title bottommargin-sm">
                                     <h3 style="font-size: 30px;" class="font-body font-weight-semibold">Algorithm
                                         practices</h2>
                                 </div>
-                                <p style="color: #777; margin-bottom: 25px;" class="lead">Here you can find programming
+                                <p style="color: #a8a8a8; margin-bottom: 25px;" class="lead">Here you can find
+                                    programming
                                     logic exercises from books or websites like HackerRank or LeetCode, as well as
                                     technical tests.</p>
-                                <a href="#" class="button button-large button-border button-black button-dark ml-0"><i
+                                <a href="<?php echo base_url("algorithms")?>"
+                                    class="button button-light button-large button-border button-rounded ml-0"><i
                                         class="icon-line-cog"></i>Algorithm practices</a>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5 offset-md-1">
                                 <div class="emphasis-title bottommargin-sm">
                                     <h3 style="font-size: 30px;" class="font-body font-weight-semibold">My programming
                                         notes</h2>
                                 </div>
-                                <p style="color: #777; margin-bottom: 25px;" class="lead">Here you can find different
+                                <p style="color: #a8a8a8; margin-bottom: 25px;" class="lead">Here you can find different
                                     courses product of my summaries about the technologies that I've studied.</p>
-                                <a href="#" class="button button-large button-border button-black button-dark ml-0"><i
+
+                                <a href="<?php echo base_url("courses")?>" class="button button-light button-large button-border button-rounded ml-0"><i
                                         class="icon-line-book-open"></i>Notes</a>
+
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <div id="section-articles" class="section page-section m-0 bg-color clearfix" style="padding: 100px 0">
+                <div id="section-articles" class="section page-section m-0 clearfix"
+                    style="padding: 100px 0; background-color: #4b3a5c">
                     <div class="container clearfix">
 
                         <div class="dark">
                             <div class="heading-block">
                                 <h2 class="font-secondary">Most read articles.</h2>
                                 <span class="mt-0">I enjoy sharing my thoughts and insights on various topics related to
-                                    my field. If you're interested in reading more, please check out my blog.</span>
+                                    my field. If you're interested in reading more,please <a
+                                        href="<?php echo base_url("blog")?>" class="text-white"><b><u>check out my
+                                                blog</u></b></a>.</span>
                             </div>
                         </div>
 
@@ -450,9 +458,10 @@
                                                 <h2><a href="#">You can now listen to headphones.</a></h2>
                                             </div>
                                             <div class="entry-content mt-3">
-                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing
                                                     elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim
                                                     culpa reiciendis et explicabo tenetur...</p>
+                                                <a href="" class="mt-4"><b>Read more</b></a>
                                             </div>
                                         </div>
                                     </div>
@@ -475,9 +484,10 @@
                                                 <h2><a href="#">Collaboratively monetize multifunctional.</a></h2>
                                             </div>
                                             <div class="entry-content mt-3">
-                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing
                                                     elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim
                                                     culpa reiciendis et explicabo tenetur...</p>
+                                                <a href="" class="mt-4"><b>Read more</b></a>
                                             </div>
                                         </div>
                                     </div>
@@ -500,9 +510,10 @@
                                                 <h2><a href="#">Professionally disinter-mediate excellent.</a></h2>
                                             </div>
                                             <div class="entry-content mt-3">
-                                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                                <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing
                                                     elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim
                                                     culpa reiciendis et explicabo tenetur...</p>
+                                                <a href="" class="mt-4"><b>Read more</b></a>
                                             </div>
                                         </div>
                                     </div>
@@ -540,7 +551,7 @@
                 <div class="container clearfix">
 
                     <div class="w-100 text-center">
-                    <div class="d-flex justify-content-center justify-content-md-end">
+                        <div class="d-flex justify-content-center justify-content-md-end">
                             <a target="_blank" href="https://www.linkedin.com/in/fernandoc-dev/"
                                 class="social-icon si-linkedin si-dark" data-animate="bounceInLeft">
                                 <i class="icon-linkedin"></i>
@@ -554,10 +565,10 @@
                         </div>
                         <span>fer@fernandoc.dev</span>
                         <p class="mb-3">Copyrights &copy; 2023 All Rights Reserved by FERNANDO CARRILLO.</p>
-                        
+
                     </div>
                     <div class="col-md-6 text-center text-md-right">
-                        
+
 
                     </div>
 

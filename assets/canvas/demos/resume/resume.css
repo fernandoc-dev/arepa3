@@ -80,7 +80,8 @@
 
 	.menu-container > .menu-item:hover > .menu-link,
 	.menu-container > .menu-item.current > .menu-link {
-		background-color: #7B6ED6;
+		/* background-color: #7B6ED6; */
+		background-color: #6b6b6b;
 		color: #FFF !important;
 	}
 
@@ -117,6 +118,13 @@
 }
 
 .page-section { padding: 120px 0; }
+
+.heading-block h1 {
+	font-size: 38px;
+	font-weight: 700;
+	text-transform: none;
+	letter-spacing: 0;
+}
 
 .heading-block h2 {
 	font-size: 38px;

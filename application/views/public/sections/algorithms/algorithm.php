@@ -83,13 +83,13 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("blog")?>"><i
-                                            class="icon-book2"></i>
-                                        <div>Blog</div>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("algorithms")?>"><i class="icon-code1"></i>
+                                        <div>Code</div>
                                     </a></li>
-                                <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("blog")?>"><i class="icon-bookmark"></i>
-                                        <div>Post</div>
+                                    <li class="menu-item current"><a class="menu-link"
+                                        href="#"><i class="icon-pencil"></i>
+                                        <div>Practice</div>
                                     </a></li>
                             </ul>
 

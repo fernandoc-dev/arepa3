@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithm</title>
+    <title>Lesson</title>
 
 </head>
 
@@ -83,13 +83,13 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("blog")?>"><i
-                                            class="icon-book2"></i>
-                                        <div>Blog</div>
+                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("courses")?>"><i
+                                            class="icon-book1"></i>
+                                        <div>Courses</div>
                                     </a></li>
                                 <li class="menu-item current"><a class="menu-link"
                                         href="<?php echo base_url("blog")?>"><i class="icon-bookmark"></i>
-                                        <div>Post</div>
+                                        <div>Lesson</div>
                                     </a></li>
                             </ul>
 

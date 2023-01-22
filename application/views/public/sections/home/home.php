@@ -102,11 +102,11 @@
                                         <div>Contact</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link" href="#" data-href="#section-code"><i
-                                            class="icon-line2-grid"></i>
+                                            class="icon-code1"></i>
                                         <div>Code</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link" href="#" data-href="#section-articles"><i
-                                            class="icon-line2-pencil"></i>
+                                            class="icon-book2"></i>
                                         <div>Articles</div>
                                     </a></li>
                             </ul>
@@ -328,7 +328,9 @@
                                     problems and deliver high-quality solutions. I am always looking for new challenges
                                     and opportunities to learn and grow as a developer. Thank you for visiting my
                                     website!</p>
-                                <a target="_blank" href="<?php echo base_url("assets/arepa3/others/Backend developer - Fernando Carrillo.pdf")?>" class="button button-large button-border button-black button-dark ml-0"><i
+                                <a target="_blank"
+                                    href="<?php echo base_url("assets/arepa3/others/Backend developer - Fernando Carrillo.pdf")?>"
+                                    class="button button-large button-border button-black button-dark ml-0"><i
                                         class="icon-line-cloud-download"></i> Download CV</a>
                             </div>
                         </div>
@@ -345,46 +347,35 @@
                             <div class="col-md-6 offset-md-3">
                                 <div class="heading-block">
                                     <h2 class="font-secondary">I'd appreciate a message</h2>
+                                    <span><i class="icon-email2"></i> fer@fernandoc.dev</span>
                                 </div>
-                                <form class="row mb-0" id="template-contactform" name="template-contactform"
-                                    action="<?php echo base_url("")?>" method="post">
-                                    <div class="form-process">
-                                        <div class="css3-spinner">
-                                            <div class="css3-spinner-scaler"></div>
-                                        </div>
+                                <form class="row mb-0" id="contact" name="contact" action="<?php echo base_url("")?>"
+                                    method="post">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" id="name" name="name" value=""
+                                            class="sm-form-control border-form-control required" placeholder="Name"
+                                            required />
                                     </div>
                                     <div class="col-md-6 form-group">
-                                        <input type="text" id="template-contactform-name"
-                                            name="template-contactform-name" value=""
-                                            class="sm-form-control border-form-control required" placeholder="Name" />
-                                    </div>
-                                    <div class="col-md-6 form-group">
-                                        <input type="email" id="template-contactform-email"
-                                            name="template-contactform-email" value=""
+                                        <input type="email" id="email" name="email" value=""
                                             class="required email sm-form-control border-form-control"
-                                            placeholder="Email Address" />
+                                            placeholder="Email Address" required />
                                     </div>
                                     <div class="clear"></div>
                                     <div class="col-12 form-group">
-                                        <input type="text" id="template-contactform-subject" name="subject" value=""
-                                            class="required sm-form-control border-form-control"
-                                            placeholder="Subject" />
+                                        <input type="text" id="subject" name="subject" value=""
+                                            class="required sm-form-control border-form-control" placeholder="Subject"
+                                            required />
                                     </div>
                                     <div class="col-12 form-group">
-                                        <textarea class="required sm-form-control border-form-control"
-                                            id="template-contactform-message" name="template-contactform-message"
-                                            rows="7" cols="30" placeholder="Your Message"></textarea>
+                                        <textarea class="required sm-form-control border-form-control" id="message"
+                                            name="message" rows="7" cols="30" placeholder="Your Message"
+                                            required></textarea>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <button class="button button-black ml-0 topmargin-sm" type="submit"
-                                            id="template-contactform-submit" name="template-contactform-submit"
-                                            value="submit">Send Message</button>
+                                        <button class="button button-black ml-0 topmargin-sm" type="submit" id="submit"
+                                            name="submit" value="submit">Send Message</button>
                                     </div>
-                                    <div class="col-12 form-group d-none">
-                                        <input type="text" id="template-contactform-botcheck"
-                                            name="template-contactform-botcheck" value="" class="sm-form-control" />
-                                    </div>
-                                    <input type="hidden" name="prefix" value="template-contactform-">
                                 </form>
                             </div>
                         </div>
@@ -530,11 +521,13 @@
         <footer id="footer" class="page-section dark border-0 p-0 clearfix" style="background-color: #1C1C1C;">
             <div class="container clearfix">
                 <div class="si-sticky d-none d-lg-block">
-                <a target="_blank" href="https://www.linkedin.com/in/fernandoc-dev/" class="social-icon si-linkedin si-dark" data-animate="bounceInLeft">
+                    <a target="_blank" href="https://www.linkedin.com/in/fernandoc-dev/"
+                        class="social-icon si-linkedin si-dark" data-animate="bounceInLeft">
                         <i class="icon-linkedin"></i>
                         <i class="icon-linkedin"></i>
                     </a>
-                    <a target="_blank" href="https://github.com/fernandoc-dev" class="social-icon si-github si-dark" data-animate="bounceInLeft" data-delay="100">
+                    <a target="_blank" href="https://github.com/fernandoc-dev" class="social-icon si-github si-dark"
+                        data-animate="bounceInLeft" data-delay="100">
                         <i class="icon-github"></i>
                         <i class="icon-github"></i>
                     </a>
@@ -547,7 +540,25 @@
                 <div class="container clearfix">
 
                     <div class="w-100 text-center">
+                    <div class="d-flex justify-content-center justify-content-md-end">
+                            <a target="_blank" href="https://www.linkedin.com/in/fernandoc-dev/"
+                                class="social-icon si-linkedin si-dark" data-animate="bounceInLeft">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/fernandoc-dev"
+                                class="social-icon si-github si-dark" data-animate="bounceInLeft" data-delay="100">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+                        </div>
+                        <span>fer@fernandoc.dev</span>
                         <p class="mb-3">Copyrights &copy; 2023 All Rights Reserved by FERNANDO CARRILLO.</p>
+                        
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        
+
                     </div>
 
                 </div>
@@ -587,6 +598,53 @@
         }
     });
     </script>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        <?php
+                    if (isset($_SESSION['title'])) {
+                        echo $_SESSION['title'];
+                    }
+                    ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php
+                if (isset($_SESSION['message'])) {
+                    echo $_SESSION['message'];
+                }
+                ?>
+                </div>
+                <div class="modal-footer">
+                    <?php
+                if (isset($_SESSION['btn1'])) {
+                    echo ("<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">" . $_SESSION['btn1'] . "</button>");
+                };
+                if (isset($_SESSION['btn2'])) {
+                    echo ("<button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">" . $_SESSION['btn2'] . "</button>");
+                };
+                if (isset($_SESSION['link'])) {
+                    echo ("<button type=\"button\" class=\"btn btn-primary\"><a style=\"color:white\" href=\"" . $_SESSION['link'] . "\">" . $_SESSION['linkm'] . "</a></button>");
+                };
+                ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+if (isset($_SESSION['message'])) {
+    echo "<script>$('#Modal').modal('show')</script>";
+}
+?>
+    <!-- Modal -->
 
 </body>
 

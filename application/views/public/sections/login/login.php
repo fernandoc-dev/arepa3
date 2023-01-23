@@ -115,13 +115,13 @@
 
                             <form style="max-width: 25rem;" action="<?php echo base_url("login")?>" method="post">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                    <label for="exampleInputEmail1">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        aria-describedby="emailHelp" placeholder="Enter username">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                    <input type="password" class="form-control" id="password" name="password"
                                         placeholder="Password">
                                 </div>
                                 <button type="submit" class="button button-border button-light button-dark ml-0">Submit</button>

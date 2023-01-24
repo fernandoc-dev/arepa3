@@ -110,21 +110,31 @@
                     <div class="row gutter-40 col-mb-80">
                         <!-- Post Content
 						============================================= -->
-                        <div class="postcontent">
-                            <h3>New article</h3>
+                        <div class="postcontent col-lg-9 order-lg-last">
+                            <h3>Create an article</h3>
 
-                            <form style="max-width: 25rem;" action="<?php echo base_url("login")?>" method="post">
+                            <form style="max-width: 25rem;" action="<?php echo base_url("admin/blog_admin/create")?>" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>" value="<?php echo ($this->security->get_csrf_hash()); ?>" />
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        aria-describedby="emailHelp" placeholder="Enter username">
+                                    <label for="exampleInputEmail1">Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Password">
+                                    <label for="exampleInputEmail1">Introduction</label>
+                                    <input type="text" class="form-control" id="introduction" name="introduction" placeholder="Enter introduction">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Content</label>
+                                    <textarea class="form-control" id="content" name="content" placeholder="Enter content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">URL</label>
+                                    <input type="text" class="form-control" id="url" name="url" placeholder="Enter url">
+                                </div>
+                                <div class="form-group">
+									<label for="image">Image</label>
+									<input type="file" class="form-control-file" id="image" name="image">
+								</div>
                                 <button type="submit" class="button button-border button-light button-dark ml-0">Submit</button>
                             </form>
 

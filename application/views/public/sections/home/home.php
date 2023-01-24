@@ -415,9 +415,9 @@
                                         notes</h2>
                                 </div>
                                 <p style="color: #a8a8a8; margin-bottom: 25px;" class="lead">Here you can find different
-                                    courses product of my summaries about the technologies that I've studied.</p>
+                                    notes product of my summaries about the technologies that I've studied.</p>
 
-                                <a href="<?php echo base_url("courses")?>" class="button button-light button-large button-border button-rounded ml-0"><i
+                                <a href="<?php echo base_url("notes")?>" class="button button-light button-large button-border button-rounded ml-0"><i
                                         class="icon-line-book-open"></i>Notes</a>
 
                             </div>

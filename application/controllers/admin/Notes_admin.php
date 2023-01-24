@@ -1,37 +1,35 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Blog_admin extends CI_Controller {
+class Notes_admin extends CI_Controller {
 
     //Class properties
     private $data;
 	public function __construct()
     {
         parent::__construct();
-		$this->load->model('blog_model');
-		$this->load->library('form_validation');
+		$this->load->model('notes_model');
     }
 	public function index()
 	{
-		$this->load->view('public/sections/blog/blog');
+		$this->load->view('public/sections/notes/notes');
 	}
 	public function create()
     {
-       
 		if(!isset($_SESSION['user'])){
-			$_SESSION['next_page'] = 'admin/blog_admin/create';
+			$_SESSION['next_page'] = 'admin/notes_admin/create';
 			redirect(base_url('login'));
 		}
         if ($this->input->server('REQUEST_METHOD') === 'GET') {
 
-            $this->load->view('admin/sections/blog/create');
+            $this->load->view('admin/sections/notes/create');
 
         } elseif ($this->input->server('REQUEST_METHOD') === 'POST') {
 			$article = $this->input->post(array('title','introduction','content','url'), TRUE);
             $timestamp = new DateTime();
 
             // Upload image
-            $config['upload_path']          = './assets/arepa3/images/blog/';
+            $config['upload_path']          = './assets/arepa3/images/notes/';
             $config['allowed_types']        = 'gif|jpg|png';
             $config['max_size']             = 2048;
             $config['max_width']            = 2048;
@@ -41,18 +39,18 @@ class Blog_admin extends CI_Controller {
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('image')){
                 $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
-                redirect(base_url('admin/blog_admin/create'));
+                redirect(base_url('admin/notes_admin/create'));
             }
              // Upload image
+             
+            $article['image']='assets/arepa3/images/notes/' . $config['file_name'];
 
-            $article['image']='assets/arepa3/images/blog/' . $config['file_name'];
-
-			if(!$this->blog_model->create($article)){
+			if(!$this->notes_model->create($article)){
                 $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post');
             }else{
                 $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created');
             }
-            redirect(base_url('admin/blog_admin/create'));
+            redirect(base_url('admin/notes_admin/create'));
         }
     }
 }

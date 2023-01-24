@@ -9,7 +9,11 @@ class Login extends CI_Controller {
 			$data = $this->input->post(NULL, TRUE);
 			if ($data['username']=='user' & $data['password']=='password-user') {
 				$_SESSION['user'] = True;
-				redirect(base_url("admin/blog_admin/create"));
+				if(isset($_SESSION['next_page']))´{
+					redirect(base_url($_SESSION['next_page']));
+				}else{
+					redirect(base_url("admin/blog_admin/create"));
+				}
 			}
 		}
 		if ($this->input->server('REQUEST_METHOD') === 'GET') {

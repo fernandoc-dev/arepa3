@@ -9,8 +9,14 @@ class Blog_model extends CI_Model{
         $articles = $query->result('blog_model');
         return $articles;
     }
-    public function read_article(){
-        $this->db->where('title', 'the title');
+    public function read_articles_links(){
+        $this->db->select('title,url,image,created_at');
+        $query = $this->db->get('blog');
+        $articles = $query->result('blog_model');
+        return $articles;
+    }
+    public function read_article($url){
+        $this->db->where('url', $url);
         $query = $this->db->get('blog');
         $article = $query->row(0,'blog_model');
         return $article;

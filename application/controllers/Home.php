@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
+	public $data;
+	public function __construct()
+    {
+        parent::__construct();
+		$this->load->model('blog_model');
+    }
 	public function index()
 	{
 		if ($this->input->server('REQUEST_METHOD') === 'POST') {
@@ -17,7 +23,8 @@ class Home extends CI_Controller {
 			$this->set_modal_message->set_the_flash_variables_for_modal('Thanks!', 'I will read the message and reply it as soon as possible');
 			redirect(base_url());
 		} elseif ($this->input->server('REQUEST_METHOD') === 'GET') {
-			$this->load->view('public/sections/home/home');
+			$this->data['articles']=$this->blog_model->read_articles();
+			$this->load->view('public/sections/home/home',$this->data);
 		}
 		
 	}

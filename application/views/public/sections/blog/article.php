@@ -29,6 +29,8 @@
 
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=5e5e5e") ?>" type="text/css" />
 
+    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/prism.css") ?>" type="text/css" />
+
     <link rel="shortcut icon" href="<?php echo base_url("assets/arepa3/images/common/favicon.png") ?>" />
 
     <!-- Document Title
@@ -121,95 +123,34 @@
                                     <!-- Entry Title
 									============================================= -->
                                     <div class="entry-title">
-                                        <h2>This is a Standard post with a Preview Image</h2>
+                                        <h2><?php echo $current_article->title?></h2>
                                     </div><!-- .entry-title end -->
 
                                     <!-- Entry Meta
 									============================================= -->
                                     <div class="entry-meta">
                                         <ul>
-                                            <li><i class="icon-calendar3"></i> 10th July 2021</li>
+                                            <li><i class="icon-calendar3"></i><?php echo date("jS M Y", strtotime($current_article->created_at))?>
+                                            </li>
                                         </ul>
                                     </div><!-- .entry-meta end -->
 
                                     <!-- Entry Image
 									============================================= -->
                                     <div class="entry-image">
-                                        <a href="#"><img
-                                                src="<?php echo base_url("assets/canvas/images/blog/full/1.jpg")?>"
-                                                alt="Blog Single"></a>
+                                        <img src="<?php echo base_url("") . $current_article->big_image ?>"
+                                            alt="Blog Single"></a>
                                     </div><!-- .entry-image end -->
 
                                     <!-- Entry Content
 									============================================= -->
                                     <div class="entry-content mt-0">
 
-                                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
-                                            odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi
-                                            leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                                            cursus magna, vel scelerisque nisl consectetur et.</p>
-
-                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur
-                                                blandit tempus porttitor</a>. Integer posuere erat a ante venenatis
-                                            dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in,
-                                            egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id
-                                            elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis
-                                            euismod semper.</p>
-
-                                        <blockquote>
-                                            <p>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur
-                                                est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia
-                                                quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi
-                                                erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper
-                                                nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                                                euismod semper.</p>
-                                        </blockquote>
-
-                                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras
-                                            mattis consectetur purus sit amet fermentum. Donec id elit non mi porta
-                                            gravida at eget metus.</p>
-
-                                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia
-                                            bibendum nulla sed consectetur. Cras justo odio, dapibus ac facilisis in,
-                                            egestas eget quam. <a href="#">Nullam quis risus eget urna</a> mollis ornare
-                                            vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit
-                                            aliquet.</p>
-
-                                        <pre>
-#header-inner {
-	width: 940px;
-	margin: 0 auto;
-	padding-top: 40px;
-}</pre>
-
-                                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia
-                                            odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Morbi
-                                            leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
-                                            cursus magna, vel scelerisque nisl consectetur et.</p>
-
-                                        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit
-                                            tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere
-                                            velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                                            Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta
-                                            gravida at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+                                        <p><?php echo $current_article->content?></p>
                                         <!-- Post Single - Content End -->
-
-
 
                                     </div>
                                 </div><!-- .entry end -->
-
-                                <!-- Post Navigation
-								============================================= -->
-                                <div class="row justify-content-between col-mb-30 post-navigation">
-                                    <div class="col-12 col-md-auto text-center">
-                                        <a href="#">&lArr; This is a Standard post with a Slider Gallery</a>
-                                    </div>
-
-                                    <div class="col-12 col-md-auto text-center">
-                                        <a href="#">This is an Embedded Audio Post &rArr;</a>
-                                    </div>
-                                </div><!-- .post-navigation end -->
 
                                 <div class="line"></div>
 
@@ -217,93 +158,34 @@
 
                                 <div class="related-posts row posts-md col-mb-30">
 
-                                    <div class="entry col-12 col-md-6">
-                                        <div class="grid-inner row align-items-center gutter-20">
-                                            <div class="col-4">
-                                                <div class="entry-image">
-                                                    <a href="#"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/small/10.jpg")?>"
-                                                            alt="Blog Single"></a>
+                                    <?php
+                                    foreach ($articles as $article) {
+                                        echo "
+                                    <div class=\"entry col-12 col-md-6\">
+                                        <div class=\"grid-inner row align-items-center gutter-20\">
+                                            <div class=\"col-4\">
+                                                <div class=\"entry-image\">
+                                                    <a href=\"" . base_url('blog/') . $article->url . "\"><img
+                                                            src=\"" . base_url() . $article->image . "\" 
+                                                            alt=\"Blog Single\"></a>
                                                 </div>
                                             </div>
-                                            <div class="col-8">
-                                                <div class="entry-title title-xs">
-                                                    <h3><a href="#">This is an Image Post</a></h3>
+                                            <div class=\"col-8\">
+                                                <div class=\"entry-title title-xs\">
+                                                    <h3><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title . "</a></h3>
                                                 </div>
-                                                <div class="entry-meta">
+                                                <div class=\"entry-meta\">
                                                     <ul>
-                                                        <li><i class="icon-calendar3"></i> 10th July 2021</li>
+                                                        <li><i class=\"icon-calendar3\"></i>" . date("jS M Y", strtotime($article->created_at)) . "</li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="entry col-12 col-md-6">
-                                        <div class="grid-inner row align-items-center gutter-20">
-                                            <div class="col-4">
-                                                <div class="entry-image">
-                                                    <a href="#"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/small/20.jpg")?>"
-                                                            alt="Blog Single"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="entry-title title-xs">
-                                                    <h3><a href="#">This is a Video Post</a></h3>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 24th July 2021</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-12 col-md-6">
-                                        <div class="grid-inner row align-items-center gutter-20">
-                                            <div class="col-4">
-                                                <div class="entry-image">
-                                                    <a href="#"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/small/21.jpg")?>"
-                                                            alt="Blog Single"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="entry-title title-xs">
-                                                    <h3><a href="#">This is a Gallery Post</a></h3>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 8th Aug 2021</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="entry col-12 col-md-6">
-                                        <div class="grid-inner row align-items-center gutter-20">
-                                            <div class="col-4">
-                                                <div class="entry-image">
-                                                    <a href="#"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/small/22.jpg")?>"
-                                                            alt="Blog Single"></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="entry-title title-xs">
-                                                    <h3><a href="#">This is an Audio Post</a></h3>
-                                                </div>
-                                                <div class="entry-meta">
-                                                    <ul>
-                                                        <li><i class="icon-calendar3"></i> 22nd Aug 2021</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ";
+                                    }
+                                    
+                                    ?>
 
                                 </div>
 
@@ -318,11 +200,13 @@
 
                                 <div class="widget widget-twitter-feed clearfix">
 
-                                    <h3 class="pt-3">Practices</h3>
+                                    <h3 class="pt-3">Other interensting posts</h3>
                                     <ul class="iconlist twitter-feed" data-username="envato" data-count="2">
-                                        <li>#1 Practice 1</li>
-                                        <li>#2 Practice 2</li>
-                                        <li>#3 Practice 3</li>
+                                        <?php
+                                            foreach ($articles as $article) {
+                                            echo "<li><a style=\"color:white\" href=\"" . base_url('blog/') . $article->url . "\">" . $article->title . "</a></li>";
+                                            }
+                                        ?>
                                     </ul>
 
                                 </div>
@@ -398,6 +282,8 @@
     <!-- Footer Scripts
 	============================================= -->
     <script src="<?php echo base_url("assets/canvas/js/functions.js") ?>"></script>
+
+    <script src="<?php echo base_url("assets/arepa3/others/prism.js") ?>"></script>
 
     <script>
     jQuery(window).scroll(function() {

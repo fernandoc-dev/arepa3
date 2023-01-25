@@ -129,10 +129,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">URL</label>
-                                    <input type="text" class="form-control" id="url" name="url" placeholder="Enter url">
+                                    <input type="text" class="form-control" id="url" name="url" placeholder="blog/url">
                                 </div>
                                 <div class="form-group">
-									<label for="image">Image</label>
+									<label for="big_image">Image(2000x1326)</label>
+									<input type="file" class="form-control-file" id="big_image" name="big_image">
+								</div>
+                                <div class="form-group">
+									<label for="image">Image(500x280)</label>
 									<input type="file" class="form-control-file" id="image" name="image">
 								</div>
                                 <button type="submit" class="button button-border button-light button-dark ml-0">Submit</button>

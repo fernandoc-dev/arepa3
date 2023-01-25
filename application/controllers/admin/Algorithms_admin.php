@@ -9,7 +9,6 @@ class Algorithms_admin extends CI_Controller {
     {
         parent::__construct();
 		$this->load->model('algorithms_model');
-		$this->load->library('form_validation');
     }
 	public function index()
 	{

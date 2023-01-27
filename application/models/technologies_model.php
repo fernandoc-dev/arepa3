@@ -13,18 +13,6 @@ class Technologies_model extends CI_Model{
         $technologies = $query->result('technologies_model');
         return $technologies;
     }
-    public function read_technologies_links(){
-        $this->db->select('id,title,url,preview_image,main_image,created_at');
-        $query = $this->db->get('technologies');
-        $technologies = $query->result('technologies_model');
-        return $technologies;
-    }
-    public function read_technology($url){
-        $this->db->where('url', $url);
-        $query = $this->db->get('technologies');
-        $technology = $query->row(0,'technologies_model');
-        return $technology;
-    }
     public function read_technology_by_id($id){
         $this->db->where('id', $id);
         $query = $this->db->get('technologies');

@@ -84,9 +84,14 @@
                                             class="icon-code1"></i>
                                         <div>Algorithms</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link"
+                                    <li class="menu-item"><a class="menu-link"
                                         href="<?php echo base_url("admin/notes_admin")?>"><i
                                             class="icon-line2-notebook"></i>
+                                        <div>Technologies</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                            class="icon-files"></i>
                                         <div>Notes</div>
                                     </a></li>
                                 <li class="menu-item current"><a class="menu-link"

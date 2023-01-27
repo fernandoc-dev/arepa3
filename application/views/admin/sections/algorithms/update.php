@@ -87,8 +87,11 @@
                                 <li class="menu-item"><a class="menu-link"
                                         href="<?php echo base_url("admin/notes_admin")?>"><i
                                             class="icon-line2-notebook"></i>
-                                        <div>Notes</div>
+                                        <div>Technologies</div>
                                     </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i class="icon-files"></i>
+                                        <div>Notes</div>
                                 <li class="menu-item"><a class="menu-link"
                                         href="<?php echo base_url("admin/blog_admin")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>

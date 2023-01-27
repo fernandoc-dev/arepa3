@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Blog</title>
+    <title>Technologies</title>
 
 </head>
 
@@ -84,12 +84,15 @@
                                             class="icon-code1"></i>
                                         <div>Algorithms</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link"
+                                    <li class="menu-item current"><a class="menu-link"
                                         href="<?php echo base_url("admin/notes_admin")?>"><i
                                             class="icon-line2-notebook"></i>
-                                        <div>Notes</div>
+                                        <div>Technologies</div>
                                     </a></li>
-                                <li class="menu-item current"><a class="menu-link"
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i class="icon-files"></i>
+                                        <div>Notes</div>
+                                <li class="menu-item"><a class="menu-link"
                                         href="<?php echo base_url("admin/blog_admin")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>
                                     </a></li>
@@ -118,7 +121,7 @@
                             <!-- Post Content
 						============================================= -->
                             <div class="postcontent">
-                                <h1>Create an article</h1>
+                                <h1>Create an technology item</h1>
 
                                 <form class="form-row" action="<?php echo base_url("admin/blog_admin/create")?>"
                                     method="post" enctype="multipart/form-data">
@@ -130,33 +133,21 @@
                                             placeholder="Enter title" value="<?php echo set_value('title') ?>">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">URL</label>
-                                        <input type="text" class="form-control" id="url" name="url"
-                                            placeholder="blog/url" value="<?php echo set_value('url') ?>">
+                                        <label for="exampleInputEmail1">Technology</label>
+                                        <input type="text" class="form-control" id="technology" name="technology"
+                                            placeholder="blog/url" value="<?php echo set_value('technology') ?>">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="exampleInputEmail1">Introduction</label>
+                                        <label for="exampleInputEmail1">Description</label>
                                         <div style="background-color:#c2c0c0;color:#474747;">
-                                            <textarea class="form-control text-black" id="intro" name="introduction"
-                                                placeholder="Enter introduction"><?php echo set_value('introduction'); ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="exampleInputEmail1">Content</label>
-                                        <div style="background-color:#c2c0c0;color:#474747;">
-                                            <textarea class="form-control" id="summer-content" name="content"
-                                                placeholder="Enter content"><?php echo set_value('content'); ?></textarea>
+                                            <textarea class="form-control text-black" id="description" name="description"
+                                                placeholder="Enter description"><?php echo set_value('description'); ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="big_image">Main Image(2000x1326)</label>
-                                        <input type="file" class="form-control-file" id="main_image" name="main_image"
-                                            value=<?php echo set_value('main_image'); ?>>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="image">Preview Image(500x280)</label>
-                                        <input type="file" class="form-control-file" id="preview_image"
-                                            name="preview_image" value=<?php echo set_value('preview_image'); ?>>
+                                        <label for="big_image">Image(2000x1326)</label>
+                                        <input type="file" class="form-control-file" id="image" name="image"
+                                            value=<?php echo set_value('image'); ?>>
                                     </div>
                                     <div class="form-group col-md-12 mt-4">
                                         <button type="submit"

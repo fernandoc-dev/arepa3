@@ -435,14 +435,14 @@
                             <div class="heading-block">
                                 <h2 class="font-secondary">Most read articles.</h2>
                                 <span class="mt-0">I enjoy sharing my thoughts and insights on various topics related to
-                                    my field. If you're interested in reading more,please <a
+                                    my field. If you're interested in reading more, please <a
                                         href="<?php echo base_url("blog")?>" class="text-white"><b><u>check out my
                                                 blog</u></b></a>.</span>
                             </div>
                         </div>
 
                         <div id="posts" class="post-grid row gutter-30 mb-0" data-layout="fitRows">
-
+                        
                             <?php
                         foreach ($articles as $article) {
                             echo "

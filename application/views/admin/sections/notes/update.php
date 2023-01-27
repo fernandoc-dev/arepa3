@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithms</title>
+    <title>Blog</title>
 
 </head>
 
@@ -41,7 +41,7 @@
 
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="clearfix dark">
 
         <!-- Header
 		============================================= -->
@@ -79,23 +79,23 @@
 
                             <ul class="menu-container one-page-menu custom-spacing" data-easing="easeInOutExpo"
                                 data-speed="1250" data-offset="0">
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("")?>"><i
-                                            class="icon-line2-home"></i>
-                                        <div>Home</div>
-                                    </a></li>
-                                <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("algorithms")?>"><i
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/algorithms_admin")?>"><i
                                             class="icon-code1"></i>
                                         <div>Algorithms</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("notes")?>"><i
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Notes</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("blog")?>"><i class="icon-book2"></i>
+                                <li class="menu-item current"><a class="menu-link"
+                                        href="<?php echo base_url("admin/blog_admin")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("login/out")?>"><i
+                                            class="icon-key1"></i>
+                                        <div>Exit</div>
                                     </a></li>
                             </ul>
 
@@ -112,38 +112,65 @@
         <section id="content">
             <div class="content-wrap">
                 <div class="container clearfix">
-                    <h1>Algorithms</h1>
 
-                    <!-- Posts
-					============================================= -->
-                    <div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
+                    <div class="row gutter-40 col-mb-80">
+                        <div class="postcontent col-lg-12">
+                            <!-- Post Content
+						============================================= -->
+                            <div class="postcontent">
+                                <h1>Update an article</h1>
 
-                        <?php
-                        foreach ($algorithms as $algorithm) {
-                        
-                            echo "
-                            <div class=\"entry col-lg-3 col-md-4 col-sm-6 col-12\">
-                            <div class=\"grid-inner\">
-                                <div class=\"entry-image\">
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\"><img
-                                            src=\"" . base_url('') . $algorithm->preview_image . "\" alt=\"" . $algorithm->url . "\"></a>
-                                </div>
-                                <div class=\"entry-title\">
-                                    <h2><a href=\"" . base_url('algorithms/') . $algorithm->url . "\">" . $algorithm->title . "</a></h2>
-                                </div>
-                                <div class=\"entry-meta mt-0\">
-                                    <span class=\"text-muted\">" . date("jS M Y", strtotime($algorithm->created_at)) . "</span>
-                                </div>
-                                <div class=\"entry-content\">
-                                    <p class=\"mb-2\">" . $algorithm->introduction .".</p>
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\" class=\"mt-4\"><b>Read more</b></a>
-                                </div>
-                            </div>
-                        </div>";
-                        }
-                        ?>
+                                <form class="form-row" action="<?php echo base_url("admin/blog_admin/update")?>"
+                                    method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
+                                        value="<?php echo ($this->security->get_csrf_hash()); ?>" />
+                                    <input type="hidden" class="form-control" id="id" name="id"
+                                        value="<?php if(set_value('id')){echo set_value('id');}else{echo $article->id;} ?>">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail1">Title</label>
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            placeholder="Enter title"
+                                            value="<?php if(set_value('title')){echo set_value('title');}else{echo $article->title;} ?>">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail1">URL</label>
+                                        <input type="text" class="form-control" id="url" name="url"
+                                            placeholder="blog/url"
+                                            value="<?php if(set_value('url')){echo set_value('url');}else{echo $article->url;} ?>">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="exampleInputEmail1">Introduction</label>
+                                        <div style="background-color:#c2c0c0;color:#474747;">
+                                            <textarea class="form-control text-black" id="intro" name="introduction"
+                                                placeholder="Enter introduction"><?php if(set_value('introduction')){echo set_value('introduction');}else{echo $article->introduction;} ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="exampleInputEmail1">Content</label>
+                                        <div style="background-color:#c2c0c0;color:#474747;">
+                                            <textarea class="form-control" id="summer-content" name="content"
+                                                placeholder="Enter content"><?php if(set_value('content')){echo set_value('content');}else{echo $article->content;} ?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="big_image">Main Image(2000x1326)</label>
+                                        <input type="file" class="form-control-file" id="main_image" name="main_image"
+                                            value=<?php echo set_value('main_image'); ?>>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image">Preview Image(500x280)</label>
+                                        <input type="file" class="form-control-file" id="preview_image"
+                                            name="preview_image" value=<?php echo set_value('preview_image'); ?>>
+                                    </div>
+                                    <div class="form-group col-md-12 mt-4">
+                                        <button type="submit"
+                                            class="button button-border button-light button-dark ml-0">Submit</button>
+                                    </div>
+                                </form>
 
-                    </div><!-- #posts end -->
+                            </div><!-- .postcontent end -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </section><!-- #content end -->
@@ -212,6 +239,10 @@
 	============================================= -->
     <script src="<?php echo base_url("assets/canvas/js/functions.js") ?>"></script>
 
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
     <script>
     jQuery(window).scroll(function() {
         var pixs = jQuery(window).scrollTop(),
@@ -276,7 +307,46 @@ if (isset($_SESSION['message'])) {
 }
 ?>
     <!-- Modal -->
-    </div>
+    <script>
+    $(document).ready(function() {
+        $('#intro').summernote({
+            placeholder: 'Enter the introduction',
+            height: 110
+        });
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $("#summer-content").summernote({
+            placeholder: 'Place here the content',
+            height: 220,
+            callbacks: {
+                onImageUpload: function(files, editor, welEditable) {
+
+                    for (var i = files.length - 1; i >= 0; i--) {
+                        sendFile(files[i], this);
+                    }
+                }
+            }
+        });
+    });
+
+    function sendFile(file, el) {
+        var form_data = new FormData();
+        form_data.append('file', file);
+        $.ajax({
+            data: form_data,
+            type: "POST",
+            url: 'get_pictures',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(url) {
+                $(el).summernote('editor.insertImage', url);
+            }
+        });
+    }
+    </script>
 </body>
 
 </html>

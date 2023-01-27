@@ -24,6 +24,10 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/animate.css") ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/magnific-popup.css") ?>" type="text/css" />
 
+    <!-- Bootstrap Data Table Plugin -->
+    <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/components/bs-datatable.css") ?>"
+        type="text/css" />
+
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/custom.css") ?>" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -33,7 +37,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithms</title>
+    <title>Blog</title>
 
 </head>
 
@@ -41,7 +45,7 @@
 
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="clearfix dark">
 
         <!-- Header
 		============================================= -->
@@ -79,23 +83,23 @@
 
                             <ul class="menu-container one-page-menu custom-spacing" data-easing="easeInOutExpo"
                                 data-speed="1250" data-offset="0">
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("")?>"><i
-                                            class="icon-line2-home"></i>
-                                        <div>Home</div>
-                                    </a></li>
-                                <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("algorithms")?>"><i
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/algorithms_admin")?>"><i
                                             class="icon-code1"></i>
                                         <div>Algorithms</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("notes")?>"><i
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Notes</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("blog")?>"><i class="icon-book2"></i>
+                                <li class="menu-item current"><a class="menu-link"
+                                        href="<?php echo base_url("admin/blog_admin")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("login/out")?>"><i class="icon-key1"></i>
+                                        <div>Exit</div>
                                     </a></li>
                             </ul>
 
@@ -106,44 +110,58 @@
             </div>
             <div class="header-wrap-clone"></div>
         </header><!-- #header end -->
-
         <!-- Content
-		============================================= -->
+        ============================================= -->
         <section id="content">
             <div class="content-wrap">
                 <div class="container clearfix">
-                    <h1>Algorithms</h1>
+                    <h1>Blog</h1>
+                    <a href="<?php echo base_url("admin/blog_admin/create")?>"
+                        class="button button-light button-small button-border button-rounded ml-0 mb-4">
+                        <i class="icon-line-cog"></i>New article</a>
 
-                    <!-- Posts
-					============================================= -->
-                    <div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
+                    <div class="table-responsive">
+                        <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>TITLE</th>
+                                    <th>URL</th>
+                                    <th>DATE</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>TITLE</th>
+                                    <th>URL</th>
+                                    <th>DATE</th>
+                                    <th>ACTIONS</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <?php
+                                foreach ($articles as $article) {
+                                    echo "
+                                        <tr>
+                                            <td>" . $article->id . "</td>
+                                            <td>" . $article->title . "</td>
+                                            <td>" . $article->url . "</td>
+                                            <td>" . $article->created_at . "</td>
+                                            <td>
+                                                <a target=\"_blank\" href=\"" . base_url("blog/") . $article->url .  "\" class=\"button button-3d button-rounded button-green\"><i class=\"icon-book-reader\"></i></a>
+                                                <a href=\"" . base_url("admin/blog_admin/update/") . $article->id .  "\" class=\"button button-3d button-rounded button-blue\"><i class=\"icon-edit1\"></i></a>
+                                                <a href=\"" . base_url("admin/blog_admin/delete/") . $article->id .  "\" class=\"button button-3d button-rounded button-red\"><i class=\"icon-trash2\"></i></a>
+                                            </td>
+                                        </tr>
+                                    ";
+                                    }
+                                    ?>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <?php
-                        foreach ($algorithms as $algorithm) {
-                        
-                            echo "
-                            <div class=\"entry col-lg-3 col-md-4 col-sm-6 col-12\">
-                            <div class=\"grid-inner\">
-                                <div class=\"entry-image\">
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\"><img
-                                            src=\"" . base_url('') . $algorithm->preview_image . "\" alt=\"" . $algorithm->url . "\"></a>
-                                </div>
-                                <div class=\"entry-title\">
-                                    <h2><a href=\"" . base_url('algorithms/') . $algorithm->url . "\">" . $algorithm->title . "</a></h2>
-                                </div>
-                                <div class=\"entry-meta mt-0\">
-                                    <span class=\"text-muted\">" . date("jS M Y", strtotime($algorithm->created_at)) . "</span>
-                                </div>
-                                <div class=\"entry-content\">
-                                    <p class=\"mb-2\">" . $algorithm->introduction .".</p>
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\" class=\"mt-4\"><b>Read more</b></a>
-                                </div>
-                            </div>
-                        </div>";
-                        }
-                        ?>
-
-                    </div><!-- #posts end -->
                 </div>
             </div>
         </section><!-- #content end -->
@@ -208,9 +226,18 @@
     <script src="<?php echo base_url("assets/canvas/js/jquery.js") ?>"></script>
     <script src="<?php echo base_url("assets/canvas/js/plugins.min.js") ?>"></script>
 
+    <!-- Bootstrap Data Table Plugin -->
+    <script src="<?php echo base_url("assets/canvas/js/components/bs-datatable.js") ?>"></script>
+
     <!-- Footer Scripts
 	============================================= -->
     <script src="<?php echo base_url("assets/canvas/js/functions.js") ?>"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#datatable1').dataTable();
+    });
+    </script>
 
     <script>
     jQuery(window).scroll(function() {
@@ -276,7 +303,6 @@ if (isset($_SESSION['message'])) {
 }
 ?>
     <!-- Modal -->
-    </div>
 </body>
 
 </html>

@@ -37,11 +37,11 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched dark">
 
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="clearfix" style="background-color:#4b3a5c">
 
         <!-- Header
 		============================================= -->
@@ -83,6 +83,16 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("algorithms")?>"><i
+                                            class="icon-code1"></i>
+                                        <div>Algorithms</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("notes")?>"><i
+                                            class="icon-line2-notebook"></i>
+                                        <div>Notes</div>
+                                    </a></li>
                                 <li class="menu-item current"><a class="menu-link"
                                         href="<?php echo base_url("blog")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>
@@ -97,54 +107,46 @@
             <div class="header-wrap-clone"></div>
         </header><!-- #header end -->
 
-        <section id="slider" class="slider-element min-vh-60 min-vh-md-100 include-header">
-            <div id="section-articles" class="section page-section m-0 clearfix"
-                style="padding: 100px 0; background-color:#4b3a5c">
+        <!-- Content
+		============================================= -->
+        <section id="content" style="background-color:#4b3a5c">
+            <div class="content-wrap">
                 <div class="container clearfix">
+                    <h1>Blog</h1>
 
-                    <div class="dark">
-                        <div class="heading-block">
-                            <h1 class="font-secondary">Welcome to my Blog</h1>
-                            <span class="mt-0">I hope you enjoy the reading.</span>
-                        </div>
-                    </div>
-
-                    <div id="posts" class="post-grid row gutter-30 mb-0" data-layout="fitRows">
+                    <!-- Posts
+					============================================= -->
+                    <div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
 
                         <?php
                         foreach ($articles as $article) {
                         
                             echo "
-                            <div class=\"entry col-md-6 col-lg-4\">
-                                <div class=\"grid-inner\">
-                                    <div class=\"entry-box-shadow\">
-                                        <div class=\"entry-image mb-0\">
-                                        <a href=" . base_url('blog/') . $article->url . "><img
-                                                    src=\"" .  base_url('') . $article->preview_image . "\"
-                                                    alt=\"Standard Post with Image\"></a>
-                                        </div>
-                                        <div class=\"entry-meta-wrapper\">
-                                            <div class=\"entry-meta mt-0\">
-                                                <span class=\"text-muted\">" . date("jS M Y", strtotime($article->created_at)) . "</span>
-                                            </div>
-                                            <div class=\"entry-title\">
-                                                <h2><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title. ".</a></h2>
-                                            </div>
-                                            <div class=\"entry-content mt-3\">
-                                                <p class=\"mb-2\">" . $article->introduction .".</p>
-                                                <a href=\"" . base_url('blog/') . $article->url . "\" class=\"mt-4\"><b>Read more</b></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class=\"entry col-lg-3 col-md-4 col-sm-6 col-12\">
+                            <div class=\"grid-inner\">
+                                <div class=\"entry-image\">
+                                    <a href=\"" . base_url('blog/') . $article->url . "\"><img
+                                            src=\"" . base_url('') . $article->preview_image . "\" alt=\"" . $article->url . "\"></a>
                                 </div>
-                            </div>";
+                                <div class=\"entry-title\">
+                                    <h2><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title . "</a></h2>
+                                </div>
+                                <div class=\"entry-meta mt-0\">
+                                    <span class=\"text-muted\">" . date("jS M Y", strtotime($article->created_at)) . "</span>
+                                </div>
+                                <div class=\"entry-content\">
+                                    <p class=\"mb-2\">" . $article->introduction .".</p>
+                                    <a href=\"" . base_url('blog/') . $article->url . "\" class=\"mt-4\"><b>Read more</b></a>
+                                </div>
+                            </div>
+                        </div>";
                         }
                         ?>
 
-                    </div>
+                    </div><!-- #posts end -->
                 </div>
             </div>
-        </section>
+        </section><!-- #content end -->
 
         <!-- Footer
 		============================================= -->

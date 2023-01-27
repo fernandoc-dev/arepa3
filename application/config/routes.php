@@ -50,6 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-$route['404_override'] = '';
+$route['404_override'] = 'not_found_404/section';
 $route['translate_uri_dashes'] = FALSE;
 $route['blog/(:any)'] = 'blog/article/$1';
+$route['algorithms/(:any)'] = 'algorithms/algorithm/$1';
+

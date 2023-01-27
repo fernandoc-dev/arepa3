@@ -12,10 +12,11 @@ class Notes_admin extends CI_Controller {
     }
 	public function index()
 	{
-		$this->load->view('public/sections/notes/notes');
+		$this->load->view('public/sections/admin/notes');
 	}
 	public function create()
     {
+       
 		if(!isset($_SESSION['user'])){
 			$_SESSION['next_page'] = 'admin/notes_admin/create';
 			redirect(base_url('login'));
@@ -32,18 +33,30 @@ class Notes_admin extends CI_Controller {
             $config['upload_path']          = './assets/arepa3/images/notes/';
             $config['allowed_types']        = 'gif|jpg|png';
             $config['max_size']             = 2048;
-            $config['max_width']            = 2048;
-            $config['max_height']           = 2048;
-            $config['overwrite']            = TRUE;
-            $config['file_name']            = substr($_FILES['image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
+            $config['max_width']            = 2000;
+            $config['max_height']           = 1326;
+            $config['file_name']            = substr($_FILES['big_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
             $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('image')){
+
+            if ( ! $this->upload->do_upload('big_image')){
                 $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
                 redirect(base_url('admin/notes_admin/create'));
+            }else{
+                $article['big_image']='assets/arepa3/images/notes/' . $config['file_name'];
             }
+
+            $config['max_width']            = 500;
+            $config['max_height']           = 280;
+            $config['file_name']            = substr($_FILES['image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
+            $this->upload->initialize($config);
+            if ( ! $this->upload->do_upload('image')){
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                redirect(base_url('admin/notes_admin/create'));
+            }else{
+                $article['image']='assets/arepa3/images/notes/' . $config['file_name'];
+            }
+            
              // Upload image
-             
-            $article['image']='assets/arepa3/images/notes/' . $config['file_name'];
 
 			if(!$this->notes_model->create($article)){
                 $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post');

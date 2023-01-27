@@ -450,8 +450,8 @@
                                 <div class=\"grid-inner\">
                                     <div class=\"entry-box-shadow\">
                                         <div class=\"entry-image mb-0\">
-                                            <a href=" . base_url('blog/') . $article->url . " data-lightbox=\"image\"><img
-                                                    src=\"" . base_url() . $article->image . "\"
+                                            <a href=" . base_url('blog/') . $article->url . "><img
+                                                    src=\"" . base_url() . $article->preview_image . "\"
                                                     alt=\"Standard Post with Image\"></a>
                                         </div>
                                         <div class=\"entry-meta-wrapper\">
@@ -462,7 +462,7 @@
                                                 <h2><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title. ".</a></h2>
                                             </div>
                                             <div class=\"entry-content mt-3\">
-                                                <p class=\"mb-2\">" . $article->introduction .".</p>
+                                                <p class=\"mb-2\">" . $article->introduction . ".</p>
                                                 <a href=\"" . base_url('blog/') . $article->url . "\" class=\"mt-4\"><b>Read more</b></a>
                                             </div>
                                         </div>

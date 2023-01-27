@@ -119,13 +119,13 @@
                                 <div class=\"grid-inner\">
                                     <div class=\"entry-box-shadow\">
                                         <div class=\"entry-image mb-0\">
-                                            <a href=" . base_url('blog/') . $article->url . " data-lightbox=\"image\"><img
-                                                    src=\"" .  base_url('') . $article->image . "\"
+                                        <a href=" . base_url('blog/') . $article->url . "><img
+                                                    src=\"" .  base_url('') . $article->preview_image . "\"
                                                     alt=\"Standard Post with Image\"></a>
                                         </div>
                                         <div class=\"entry-meta-wrapper\">
                                             <div class=\"entry-meta mt-0\">
-                                                <span class=\"text-muted\">" . date("js m y", strtotime($article->created_at)) . "</span>
+                                                <span class=\"text-muted\">" . date("jS M Y", strtotime($article->created_at)) . "</span>
                                             </div>
                                             <div class=\"entry-title\">
                                                 <h2><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title. ".</a></h2>

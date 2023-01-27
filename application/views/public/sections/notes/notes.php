@@ -85,7 +85,7 @@
                                     </a></li>
                                 <li class="menu-item current"><a class="menu-link" href="#"><i
                                             class="icon-book1"></i>
-                                        <div>Courses</div>
+                                        <div>Notes</div>
                                     </a></li>
                             </ul>
 
@@ -104,7 +104,7 @@
                 <div class="container clearfix">
 
                     <div class="entry-title">
-                        <h1>My courses</h1>
+                        <h1>My notes</h1>
                     </div><!-- .entry-title end -->
 
                     <!-- Posts
@@ -112,121 +112,30 @@
                     <div id="posts" class="row grid-container gutter-40">
 
                         <div class="entry col-12">
-                            <div class="grid-inner row no-gutters">
-                                <div class="entry-image col-md-4">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
+                            <?php
+                            foreach ($notes as $note) {
+                                echo "
+                                <div class=\"grid-inner row no-gutters\">
+                                <div class=\"entry-image col-md-4\">
+                                    <a href=\"" . base_url('notes/') . $note->url . "\"
+                                        data-lightbox=\"image\"><img
+                                            src=\"" . base_url() . $note->image . "\"
+                                            alt=\"Standard Post with Image\"></a>
                                 </div>
-                                <div class="col-md-8 pl-md-4">
-                                    <div class="entry-title title-sm">
-                                        <h2><a href="<?php echo base_url("courses/lesson")?>">This is a Standard post with a Preview Image</a>
+                                <div class=\"col-md-8 pl-md-4\">
+                                    <div class=\"entry-title title-sm\">
+                                        <h2><a href=\"" . base_url('notes/') . $note->url . "\">" . $note->title . "</a>
                                         </h2>
                                     </div>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                            asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam
-                                            doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem
-                                            voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque
-                                            vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                        <a href="<?php echo base_url("courses/lesson")?>" class="more-link text-white">Check it out</a>
+                                    <div class=\"entry-content\">
+                                        <p>" . $note->introduction . "</p>
+                                        <a href=\"" . base_url('notes/') . $note->url . "\" class=\"more-link text-white\">Check it out</a>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="grid-inner row no-gutters">
-                                <div class="entry-image col-md-4">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
-                                </div>
-                                <div class="col-md-8 pl-md-4">
-                                    <div class="entry-title title-sm">
-                                        <h2><a href="<?php echo base_url("courses/lesson")?>">This is a Standard post with a Preview Image</a>
-                                        </h2>
-                                    </div>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                            asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam
-                                            doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem
-                                            voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque
-                                            vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                        <a href="<?php echo base_url("courses/lesson")?>" class="more-link text-white">Check it out</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid-inner row no-gutters">
-                                <div class="entry-image col-md-4">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
-                                </div>
-                                <div class="col-md-8 pl-md-4">
-                                    <div class="entry-title title-sm">
-                                        <h2><a href="<?php echo base_url("courses/lesson")?>">This is a Standard post with a Preview Image</a>
-                                        </h2>
-                                    </div>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                            asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam
-                                            doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem
-                                            voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque
-                                            vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                        <a href="<?php echo base_url("courses/lesson")?>" class="more-link text-white">Check it out</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid-inner row no-gutters">
-                                <div class="entry-image col-md-4">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
-                                </div>
-                                <div class="col-md-8 pl-md-4">
-                                    <div class="entry-title title-sm">
-                                        <h2><a href="<?php echo base_url("courses/lesson")?>">This is a Standard post with a Preview Image</a>
-                                        </h2>
-                                    </div>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                            asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam
-                                            doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem
-                                            voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque
-                                            vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                        <a href="<?php echo base_url("courses/lesson")?>" class="more-link text-white">Check it out</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid-inner row no-gutters">
-                                <div class="entry-image col-md-4">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
-                                </div>
-                                <div class="col-md-8 pl-md-4">
-                                    <div class="entry-title title-sm">
-                                        <h2><a href="<?php echo base_url("courses/lesson")?>">This is a Standard post with a Preview Image</a>
-                                        </h2>
-                                    </div>
-                                    <div class="entry-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
-                                            asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam
-                                            doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem
-                                            voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque
-                                            vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                        <a href="<?php echo base_url("courses/lesson")?>" class="more-link text-white">Check it out</a>
-                                    </div>
-                                </div>
-                            </div>
-
+                            </div>";
+                            }
+                            ?>
+                            
                         </div>
 
                     </div>

@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithm</title>
+    <title>Algorithms</title>
 
 </head>
 
@@ -83,9 +83,9 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item current"><a class="menu-link" href="<?php echo base_url("blog")?>"><i
-                                            class="icon-book2"></i>
-                                        <div>Code</div>
+                                <li class="menu-item current"><a class="menu-link"
+                                        href="<?php echo base_url("algorithms")?>"><i class="icon-code1"></i>
+                                        <div>Algorithms</div>
                                     </a></li>
                             </ul>
 
@@ -98,203 +98,50 @@
         </header><!-- #header end -->
 
         <section id="slider" class="slider-element min-vh-60 min-vh-md-100 include-header">
-            <div id="section-code" class="section m-0 page-section dark">
+            <div id="section-algorithms" class="section page-section m-0 clearfix"
+                style="padding: 100px 0; background-color:#4b3a5c">
                 <div class="container clearfix">
 
                     <div class="dark">
                         <div class="heading-block">
-                            <h1 class="font-secondary">Algorithm practices.</h1>
-                            <span class="mt-0">Let's sharpen those resolving skills.</span>
+                            <h1 class="font-secondary">Welcome to my Algorithms</h1>
+                            <span class="mt-0">I hope you enjoy the reading.</span>
                         </div>
                     </div>
-                    <!-- Posts
-					============================================= -->
-                    <div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
 
-                        <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="grid-inner">
-                                <div class="entry-image">
-                                    <a href="<?php echo base_url("assets/canvas/images/blog/full/17.jpg")?>"
-                                        data-lightbox="image"><img
-                                            src="<?php echo base_url("assets/canvas/images/blog/grid/17.jpg")?>"
-                                            alt="Standard Post with Image"></a>
-                                </div>
-                                <div class="entry-title">
-                                    <h2><a href="<?php echo base_url("algorithms/algorithm")?>">This is a Standard post with a Preview Image</a>
-                                    </h2>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 10th Feb 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione,
-                                        voluptatem,
-                                        dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo
-                                        tenetur!<a href="<?php echo base_url("algorithms/algorithm")?>" class=""> ... <u>Read More</u></a></p>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="posts" class="post-grid row gutter-30 mb-0" data-layout="fitRows">
 
-                        <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="grid-inner">
-                                <div class="entry-image">
-                                    <iframe src="https://player.vimeo.com/video/87701971" width="500" height="281"
-                                        allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                </div>
-                                <div class="entry-title">
-                                    <h2><a href="blog-single-full.html">This is a Standard post with a Vimeo
-                                            Video</a></h2>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 16th Feb 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione,
-                                        voluptatem,
-                                        dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo
-                                        tenetur!<a href="<?php echo base_url("algorithms/algorithm")?>" class=""> ... <u>Read More</u></a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="grid-inner">
-                                <div class="entry-image">
-                                    <div class="fslider" data-arrows="false" data-lightbox="gallery">
-                                        <div class="flexslider">
-                                            <div class="slider-wrap">
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/10.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/10.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/20.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/20.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/21.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/21.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
+                        <?php
+                        foreach ($algorithms as $algorithm) {
+                        
+                            echo "
+                            <div class=\"entry col-md-6 col-lg-4\">
+                                <div class=\"grid-inner\">
+                                    <div class=\"entry-box-shadow\">
+                                        <div class=\"entry-image mb-0\">
+                                        <a href=" . base_url('algorithms/') . $algorithm->url . "><img
+                                                    src=\"" .  base_url('') . $algorithm->preview_image . "\"
+                                                    alt=\"Standard Post with Image\"></a>
+                                        </div>
+                                        <div class=\"entry-meta-wrapper\">
+                                            <div class=\"entry-meta mt-0\">
+                                                <span class=\"text-muted\">" . date("jS M Y", strtotime($algorithm->created_at)) . "</span>
+                                            </div>
+                                            <div class=\"entry-title\">
+                                                <h2><a href=\"" . base_url('algorithms/') . $algorithm->url . "\">" . $algorithm->title. ".</a></h2>
+                                            </div>
+                                            <div class=\"entry-content mt-3\">
+                                                <p class=\"mb-2\">" . $algorithm->introduction .".</p>
+                                                <a href=\"" . base_url('algorithms/') . $algorithm->url . "\" class=\"mt-4\"><b>Read more</b></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="entry-title">
-                                    <h2><a href="blog-single-small.html">This is a Standard post with a Slider
-                                            Gallery</a>
-                                    </h2>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 24th Feb 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione,
-                                        voluptatem,
-                                        dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo
-                                        tenetur!<a href="<?php echo base_url("algorithms/algorithm")?>" class=""> ... <u>Read More</u></a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="grid-inner">
-                                <div class="entry-image">
-                                    <div class="fslider" data-arrows="false" data-lightbox="gallery">
-                                        <div class="flexslider">
-                                            <div class="slider-wrap">
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/10.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/10.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/20.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/20.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/21.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/21.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="entry-title">
-                                    <h2><a href="blog-single-small.html">This is a Standard post with a Slider
-                                            Gallery</a>
-                                    </h2>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 24th Feb 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione,
-                                        voluptatem,
-                                        dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo
-                                        tenetur!<a href="<?php echo base_url("algorithms/algorithm")?>" class=""> ... <u>Read More</u></a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="entry col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="grid-inner">
-                                <div class="entry-image">
-                                    <div class="fslider" data-arrows="false" data-lightbox="gallery">
-                                        <div class="flexslider">
-                                            <div class="slider-wrap">
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/10.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/10.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/20.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/20.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                                <div class="slide"><a
-                                                        href="<?php echo base_url("assets/canvas/images/blog/full/21.jpg")?>"
-                                                        data-lightbox="gallery-item"><img
-                                                            src="<?php echo base_url("assets/canvas/images/blog/grid/21.jpg")?>"
-                                                            alt="Standard Post with Gallery"></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="entry-title">
-                                    <h2><a href="blog-single-small.html">This is a Standard post with a Slider
-                                            Gallery</a>
-                                    </h2>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 24th Feb 2021</li>
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione,
-                                        voluptatem,
-                                        dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo
-                                        tenetur!<a href="<?php echo base_url("algorithms/algorithm")?>" class=""> ... <u>Read More</u></a></p>
-                                </div>
-                            </div>
-                        </div>
+                            </div>";
+                        }
+                        ?>
 
                     </div>
-                    
                 </div>
             </div>
         </section>

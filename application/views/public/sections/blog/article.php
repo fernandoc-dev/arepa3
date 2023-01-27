@@ -25,11 +25,13 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/magnific-popup.css") ?>" type="text/css" />
 
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/custom.css") ?>" type="text/css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=5e5e5e") ?>" type="text/css" />
 
-    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/prism.css") ?>" type="text/css" />
+    <!-- highlight -->
+    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/highlight/styles/vs.min.css") ?>">
 
     <link rel="shortcut icon" href="<?php echo base_url("assets/arepa3/images/common/favicon.png") ?>" />
 
@@ -85,13 +87,19 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("blog")?>"><i
-                                            class="icon-book2"></i>
-                                        <div>Blog</div>
+                                    <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("algorithms")?>"><i
+                                            class="icon-code1"></i>
+                                        <div>Algorithms</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("notes")?>"><i
+                                            class="icon-line2-notebook"></i>
+                                        <div>Notes</div>
                                     </a></li>
                                 <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("blog")?>"><i class="icon-bookmark"></i>
-                                        <div>Post</div>
+                                        href="<?php echo base_url("blog")?>"><i class="icon-book2"></i>
+                                        <div>Blog</div>
                                     </a></li>
                             </ul>
 
@@ -123,14 +131,15 @@
                                     <!-- Entry Title
 									============================================= -->
                                     <div class="entry-title">
-                                        <h2><?php echo $current_article->title?></h2>
+                                        <h1><?php echo $current_article->title?></h1>
                                     </div><!-- .entry-title end -->
 
                                     <!-- Entry Meta
 									============================================= -->
                                     <div class="entry-meta">
                                         <ul>
-                                            <li><i class="icon-calendar3"></i><?php echo date("jS M Y", strtotime($current_article->created_at))?>
+                                            <li><i
+                                                    class="icon-calendar3"></i><?php echo date("jS M Y", strtotime($current_article->created_at))?>
                                             </li>
                                         </ul>
                                     </div><!-- .entry-meta end -->
@@ -138,7 +147,7 @@
                                     <!-- Entry Image
 									============================================= -->
                                     <div class="entry-image">
-                                        <img src="<?php echo base_url("") . $current_article->big_image ?>"
+                                        <img src="<?php echo base_url("") . $current_article->main_image ?>"
                                             alt="Blog Single"></a>
                                     </div><!-- .entry-image end -->
 
@@ -146,7 +155,7 @@
 									============================================= -->
                                     <div class="entry-content mt-0">
 
-                                        <p><?php echo $current_article->content?></p>
+                                        <?php echo $current_article->content?>
                                         <!-- Post Single - Content End -->
 
                                     </div>
@@ -160,13 +169,14 @@
 
                                     <?php
                                     foreach ($articles as $article) {
-                                        echo "
+                                        if ($article->url != $current_article->url) {
+                                            echo "
                                     <div class=\"entry col-12 col-md-6\">
                                         <div class=\"grid-inner row align-items-center gutter-20\">
                                             <div class=\"col-4\">
                                                 <div class=\"entry-image\">
                                                     <a href=\"" . base_url('blog/') . $article->url . "\"><img
-                                                            src=\"" . base_url() . $article->image . "\" 
+                                                            src=\"" . base_url() . $article->preview_image . "\" 
                                                             alt=\"Blog Single\"></a>
                                                 </div>
                                             </div>
@@ -183,6 +193,7 @@
                                         </div>
                                     </div>
                                     ";
+                                        }
                                     }
                                     
                                     ?>
@@ -200,11 +211,13 @@
 
                                 <div class="widget widget-twitter-feed clearfix">
 
-                                    <h3 class="pt-3">Other interensting posts</h3>
+                                    <h4 class="pt-3 mt-2">Other interensting posts</h4>
                                     <ul class="iconlist twitter-feed" data-username="envato" data-count="2">
                                         <?php
                                             foreach ($articles as $article) {
-                                            echo "<li><a style=\"color:white\" href=\"" . base_url('blog/') . $article->url . "\">" . $article->title . "</a></li>";
+                                                if($article->url!=$current_article->url){
+                                                    echo "<li><a style=\"color:white\" href=\"" . base_url('blog/') . $article->url . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $article->title . "</a></li>";
+                                                }
                                             }
                                         ?>
                                     </ul>
@@ -283,7 +296,11 @@
 	============================================= -->
     <script src="<?php echo base_url("assets/canvas/js/functions.js") ?>"></script>
 
-    <script src="<?php echo base_url("assets/arepa3/others/prism.js") ?>"></script>
+    <!-- Highlight -->
+    <script src="<?php echo base_url("assets/arepa3/others/highlight/highlight.min.js"); ?>"></script>
+    <script>
+    hljs.highlightAll();
+    </script>
 
     <script>
     jQuery(window).scroll(function() {

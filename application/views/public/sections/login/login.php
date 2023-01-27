@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="stretched">
+<body class="stretched dark">
 
     <!-- Document Wrapper
 	============================================= -->
@@ -83,13 +83,9 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("courses")?>"><i
-                                            class="icon-book1"></i>
-                                        <div>Courses</div>
-                                    </a></li>
                                 <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("blog")?>"><i class="icon-bookmark"></i>
-                                        <div>Lesson</div>
+                                        href="<?php echo base_url("login")?>"><i class="icon-key1"></i>
+                                        <div>Login</div>
                                     </a></li>
                             </ul>
 
@@ -103,34 +99,38 @@
 
         <!-- Content
 		============================================= -->
-        <section id="slider" class="slider-element min-vh-60 min-vh-md-100 include-header">
-            <div id="section-code" class="section m-0 page-section dark">
+        <section id="content">
+            <div class="content-wrap">
                 <div class="container clearfix">
 
                     <div class="row gutter-40 col-mb-80">
-                        <!-- Post Content
+                        <div class="postcontent offset-md-4 col-md-4">
+                            <!-- Post Content
 						============================================= -->
-                        <div class="postcontent">
-                            <h3>New article</h3>
+                            <div class="postcontent">
+                                <h1>Login</h1>
 
-                            <form style="max-width: 25rem;" action="<?php echo base_url("login")?>" method="post">
-                                <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>" value="<?php echo ($this->security->get_csrf_hash()); ?>" />
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        aria-describedby="emailHelp" placeholder="Enter username">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Password">
-                                </div>
-                                <button type="submit" class="button button-border button-light button-dark ml-0">Submit</button>
-                            </form>
+                                <form action="<?php echo base_url("login")?>" method="post">
+                                    <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
+                                        value="<?php echo ($this->security->get_csrf_hash()); ?>" />
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username"
+                                            aria-describedby="emailHelp" placeholder="Enter username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password">
+                                    </div>
+                                    <button type="submit"
+                                        class="button button-border button-light button-dark ml-0">Submit</button>
+                                </form>
 
-                        </div><!-- .postcontent end -->
+                            </div><!-- .postcontent end -->
+                        </div>
+
                     </div>
-
                 </div>
             </div>
         </section><!-- #content end -->

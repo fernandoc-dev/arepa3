@@ -37,7 +37,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Blog</title>
+    <title>Technologies</title>
 
 </head>
 
@@ -89,7 +89,7 @@
                                         <div>Algorithms</div>
                                     </a></li>
                                     <li class="menu-item current"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                        href="<?php echo base_url("admin/technologies_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Technologies</div>
                                     </a></li>
@@ -118,44 +118,41 @@
         <section id="content">
             <div class="content-wrap">
                 <div class="container clearfix">
-                    <h1>Blog</h1>
-                    <a href="<?php echo base_url("admin/blog_admin/create")?>"
+                    <h1>Technologies</h1>
+                    <a href="<?php echo base_url("admin/technologies_admin/create")?>"
                         class="button button-light button-small button-border button-rounded ml-0 mb-4">
-                        <i class="icon-line-cog"></i>New article</a>
+                        <i class="icon-line-cog"></i>New Technology item</a>
 
                     <div class="table-responsive">
                         <table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>TECHNOLOGY</th>
                                     <th>TITLE</th>
-                                    <th>URL</th>
-                                    <th>DATE</th>
                                     <th>ACTIONS</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
+                                    <th>TECHNOLOGY</th>
                                     <th>TITLE</th>
-                                    <th>URL</th>
-                                    <th>DATE</th>
                                     <th>ACTIONS</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <?php
-                                foreach ($articles as $article) {
+                                foreach ($technologies as $technology) {
                                     echo "
                                         <tr>
-                                            <td>" . $article->id . "</td>
-                                            <td>" . $article->title . "</td>
-                                            <td>" . $article->url . "</td>
-                                            <td>" . $article->created_at . "</td>
+                                            <td>" . $technology->id . "</td>
+                                            <td>" . $technology->technology . "</td>
+                                            <td>" . $technology->title . "</td>
                                             <td>
-                                                <a target=\"_blank\" href=\"" . base_url("blog/") . $article->url .  "\" class=\"button button-3d button-rounded button-green\"><i class=\"icon-book-reader\"></i></a>
-                                                <a href=\"" . base_url("admin/blog_admin/update/") . $article->id .  "\" class=\"button button-3d button-rounded button-blue\"><i class=\"icon-edit1\"></i></a>
-                                                <a href=\"" . base_url("admin/blog_admin/delete/") . $article->id .  "\" class=\"button button-3d button-rounded button-red\"><i class=\"icon-trash2\"></i></a>
+                                                <a target=\"_blank\" href=\"" . base_url("") . $technology->technology .  "\" class=\"button button-3d button-rounded button-green\"><i class=\"icon-book-reader\"></i></a>
+                                                <a href=\"" . base_url("admin/technologies_admin/update/") . $technology->id .  "\" class=\"button button-3d button-rounded button-blue\"><i class=\"icon-edit1\"></i></a>
+                                                <a href=\"" . base_url("admin/technologies_admin/delete/") . $technology->id .  "\" class=\"button button-3d button-rounded button-red\"><i class=\"icon-trash2\"></i></a>
                                             </td>
                                         </tr>
                                     ";

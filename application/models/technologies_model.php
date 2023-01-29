@@ -19,6 +19,18 @@ class Technologies_model extends CI_Model{
         $technology = $query->row(0,'technologies_model');
         return $technology;
     }
+    public function read_technology_by_technology($technology){
+        $this->db->where('technology', $technology);
+        $query = $this->db->get('technologies');
+        $technology = $query->row(0,'technologies_model');
+        return $technology;
+    }
+    public function read_technologies_for_notes(){
+        $this->db->select('id,technology');
+        $query = $this->db->get('technologies');
+        $technologies = $query->result('technologies_model');
+        return $technologies;
+    }
     public function update($technology){
         $this->db->where('id', $technology['id']);
         $this->db->update('technologies', $technology);

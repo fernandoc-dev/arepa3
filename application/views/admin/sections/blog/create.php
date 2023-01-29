@@ -85,7 +85,7 @@
                                         <div>Algorithms</div>
                                     </a></li>
                                     <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                        href="<?php echo base_url("admin/technologies_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Technologies</div>
                                     </a></li>

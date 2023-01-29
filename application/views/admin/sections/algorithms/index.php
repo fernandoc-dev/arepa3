@@ -88,21 +88,20 @@
                                             class="icon-code1"></i>
                                         <div>Algorithms</div>
                                     </a></li>
-                                    <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("admin/technologies_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Technologies</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
-                                            class="icon-files"></i>
+                                        href="<?php echo base_url("admin/notes_admin")?>"><i class="icon-files"></i>
                                         <div>Notes</div>
                                 <li class="menu-item"><a class="menu-link"
                                         href="<?php echo base_url("admin/blog_admin")?>"><i class="icon-book2"></i>
                                         <div>Blog</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("login/out")?>"><i class="icon-key1"></i>
+                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("login/out")?>"><i
+                                            class="icon-key1"></i>
                                         <div>Exit</div>
                                     </a></li>
                             </ul>

@@ -52,6 +52,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = 'not_found_404/section';
 $route['translate_uri_dashes'] = FALSE;
-$route['blog/(:any)'] = 'blog/article/$1';
+
+// PROTECTED ROUTES
+$route['algorithms'] = 'algorithms';
+$route['notes'] = 'notes';
+$route['blog'] = 'blog';
+$route['login'] = 'login';
 $route['algorithms/(:any)'] = 'algorithms/algorithm/$1';
+$route['blog/(:any)'] = 'blog/article/$1';
+
+// ADMIN ZONE
+$route['admin/(:any)'] = 'admin/$1';
+$route['admin/(:any)/(:any)'] = 'admin/$1/$2';
+
+// $route['assets/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'assets/$1/$2/$3/$4/$5';
+
+// TESTS
+$route['test'] = 'test_layouts';
+
+// NOTES ZONE
+$route['(:any)'] = 'notes/technology/$1';
+$route['(:any)/(:any)'] = 'notes/note/$1/$2';
+
 

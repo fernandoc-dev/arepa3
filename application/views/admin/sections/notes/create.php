@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Blog</title>
+    <title>Notes</title>
 
 </head>
 
@@ -85,7 +85,7 @@
                                         <div>Algorithms</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                        href="<?php echo base_url("admin/technologies_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Technologies</div>
                                     </a></li>
@@ -121,21 +121,33 @@
                             <!-- Post Content
 						============================================= -->
                             <div class="postcontent">
-                                <h1>Create an article</h1>
+                                <h1>Create a note</h1>
 
-                                <form class="form-row" action="<?php echo base_url("admin/blog_admin/create")?>"
+                                <form class="form-row" action="<?php echo base_url("admin/notes_admin/create")?>"
                                     method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
                                         value="<?php echo ($this->security->get_csrf_hash()); ?>" />
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
+                                        <label for="technology_id">Technology</label>
+                                        <select class="form-control" id="technology_id" name="technology_id">
+                                            <?php
+                                            foreach ($technologies as $technology) {
+                                                echo "
+                                                <option value=\"" . $technology->id . "\">" . $technology->technology . "</option>
+                                                ";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
                                             placeholder="Enter title" value="<?php echo set_value('title') ?>">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1">URL</label>
                                         <input type="text" class="form-control" id="url" name="url"
-                                            placeholder="blog/url" value="<?php echo set_value('url') ?>">
+                                            placeholder="notes/url" value="<?php echo set_value('url') ?>">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="exampleInputEmail1">Introduction</label>

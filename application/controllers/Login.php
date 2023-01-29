@@ -20,7 +20,8 @@ class Login extends CI_Controller {
 			$this->load->view('public/sections/login/login');
 		}
 	}
-	public function out(){
+	public function out()
+	{
 		session_destroy();
 		redirect(base_url());
 	}

@@ -9,13 +9,35 @@ class Notes_model extends CI_Model{
         return $this->db->affected_rows();
     }
     public function read_notes(){
+        $this->db->select('notes.id,notes.title,notes.url,notes.created_at,notes.preview_image,notes.main_image,technologies.technology');
+        $this->db->from('notes');
+        $this->db->join('technologies', 'technologies.id = notes.technology_id');
+        $query = $this->db->get();
+        $notes = $query->result('notes_model');
+        return $notes;
+    }
+    public function read_note_by_technology_and_url($technology,$url){
+        $this->db->where('technologies.technology', $technology);
+        $this->db->where('notes.url', $url);
+        $this->db->select('notes.id,notes.title,notes.url,notes.content,notes.created_at,notes.preview_image,notes.main_image,technologies.technology');
+        $this->db->from('notes');
+        $this->db->join('technologies', 'technologies.id = notes.technology_id');
+        $query = $this->db->get();
+        $notes = $query->row(0,'notes_model');
+        return $notes;
+    }
+    public function read_notes_links($technology_id){
+        $this->db->select('id,title,url,preview_image,main_image,created_at');
         $query = $this->db->get('notes');
         $notes = $query->result('notes_model');
         return $notes;
     }
-    public function read_notes_links(){
-        $this->db->select('id,title,url,preview_image,main_image,created_at');
-        $query = $this->db->get('notes');
+    public function read_notes_by_technology($technology){
+        $this->db->where('technologies.technology', $technology);
+        $this->db->select('notes.title,notes.url,notes.introduction,notes.created_at,notes.preview_image');
+        $this->db->from('notes');
+        $this->db->join('technologies', 'technologies.id = notes.technology_id');
+        $query = $this->db->get();
         $notes = $query->result('notes_model');
         return $notes;
     }

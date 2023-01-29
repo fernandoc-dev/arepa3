@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Blog</title>
+    <title>Notes</title>
 
 </head>
 
@@ -85,7 +85,7 @@
                                         <div>Algorithms</div>
                                     </a></li>
                                 <li class="menu-item"><a class="menu-link"
-                                        href="<?php echo base_url("admin/notes_admin")?>"><i
+                                        href="<?php echo base_url("admin/technologies_admin")?>"><i
                                             class="icon-line2-notebook"></i>
                                         <div>Technologies</div>
                                     </a></li>
@@ -121,38 +121,56 @@
                             <!-- Post Content
 						============================================= -->
                             <div class="postcontent">
-                                <h1>Update an article</h1>
+                                <h1>Update an note</h1>
 
-                                <form class="form-row" action="<?php echo base_url("admin/blog_admin/update")?>"
+                                <form class="form-row" action="<?php echo base_url("admin/notes_admin/update")?>"
                                     method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
                                         value="<?php echo ($this->security->get_csrf_hash()); ?>" />
                                     <input type="hidden" class="form-control" id="id" name="id"
-                                        value="<?php if(set_value('id')){echo set_value('id');}else{echo $article->id;} ?>">
+                                        value="<?php if(set_value('id')){echo set_value('id');}else{echo $note->id;} ?>">
+                                    <div class="form-group col-md-4">
+                                        <label for="technology_id">Technology</label>
+                                        <select class="form-control" id="technology_id" name="technology_id">
+                                            <?php
+                                            foreach ($technologies as $technology) {
+                                                if($note->technology_id==$technology->id){
+                                                    echo "
+                                                    <option value=\"" . $technology->id . "\" selected>" . $technology->technology . "</option>
+                                                    ";
+                                                }else{
+                                                    echo "
+                                                    <option value=\"" . $technology->id . "\">" . $technology->technology . "</option>
+                                                    ";
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
                                             placeholder="Enter title"
-                                            value="<?php if(set_value('title')){echo set_value('title');}else{echo $article->title;} ?>">
+                                            value="<?php if(set_value('title')){echo set_value('title');}else{echo $note->title;} ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">URL</label>
                                         <input type="text" class="form-control" id="url" name="url"
-                                            placeholder="blog/url"
-                                            value="<?php if(set_value('url')){echo set_value('url');}else{echo $article->url;} ?>">
+                                            placeholder="notes/url"
+                                            value="<?php if(set_value('url')){echo set_value('url');}else{echo $note->url;} ?>">
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="exampleInputEmail1">Introduction</label>
                                         <div style="background-color:#c2c0c0;color:#474747;">
                                             <textarea class="form-control text-black" id="intro" name="introduction"
-                                                placeholder="Enter introduction"><?php if(set_value('introduction')){echo set_value('introduction');}else{echo $article->introduction;} ?></textarea>
+                                                placeholder="Enter introduction"><?php if(set_value('introduction')){echo set_value('introduction');}else{echo $note->introduction;} ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="exampleInputEmail1">Content</label>
                                         <div style="background-color:#c2c0c0;color:#474747;">
                                             <textarea class="form-control" id="summer-content" name="content"
-                                                placeholder="Enter content"><?php if(set_value('content')){echo set_value('content');}else{echo $article->content;} ?></textarea>
+                                                placeholder="Enter content"><?php if(set_value('content')){echo set_value('content');}else{echo $note->content;} ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">

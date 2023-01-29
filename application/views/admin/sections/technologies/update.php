@@ -33,7 +33,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Blog</title>
+    <title>Technologies</title>
 
 </head>
 
@@ -121,49 +121,37 @@
                             <!-- Post Content
 						============================================= -->
                             <div class="postcontent">
-                                <h1>Update an article</h1>
+                                <h1>Update an technology</h1>
 
-                                <form class="form-row" action="<?php echo base_url("admin/blog_admin/update")?>"
+                                <form class="form-row" action="<?php echo base_url("admin/technologies_admin/update")?>"
                                     method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
                                         value="<?php echo ($this->security->get_csrf_hash()); ?>" />
                                     <input type="hidden" class="form-control" id="id" name="id"
-                                        value="<?php if(set_value('id')){echo set_value('id');}else{echo $article->id;} ?>">
+                                        value="<?php if(set_value('id')){echo set_value('id');}else{echo $technology->id;} ?>">
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail1">Technology</label>
+                                        <input type="text" class="form-control" id="technology" name="technology"
+                                            placeholder="Enter technology item"
+                                            value="<?php if(set_value('technology')){echo set_value('technology');}else{echo $technology->technology;} ?>">
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label for="exampleInputEmail1">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
-                                            placeholder="Enter title"
-                                            value="<?php if(set_value('title')){echo set_value('title');}else{echo $article->title;} ?>">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputEmail1">URL</label>
-                                        <input type="text" class="form-control" id="url" name="url"
-                                            placeholder="blog/url"
-                                            value="<?php if(set_value('url')){echo set_value('url');}else{echo $article->url;} ?>">
+                                            placeholder="Enter the title"
+                                            value="<?php if(set_value('title')){echo set_value('title');}else{echo $technology->title;} ?>">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="exampleInputEmail1">Introduction</label>
+                                        <label for="exampleInputEmail1">Description</label>
                                         <div style="background-color:#c2c0c0;color:#474747;">
-                                            <textarea class="form-control text-black" id="intro" name="introduction"
-                                                placeholder="Enter introduction"><?php if(set_value('introduction')){echo set_value('introduction');}else{echo $article->introduction;} ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="exampleInputEmail1">Content</label>
-                                        <div style="background-color:#c2c0c0;color:#474747;">
-                                            <textarea class="form-control" id="summer-content" name="content"
-                                                placeholder="Enter content"><?php if(set_value('content')){echo set_value('content');}else{echo $article->content;} ?></textarea>
+                                            <textarea class="form-control text-black" id="description" name="description"
+                                                placeholder="Enter description"><?php if(set_value('description')){echo set_value('description');}else{echo $technology->technology;} ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="big_image">Main Image(2000x1326)</label>
-                                        <input type="file" class="form-control-file" id="main_image" name="main_image"
-                                            value=<?php echo set_value('main_image'); ?>>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="image">Preview Image(500x280)</label>
-                                        <input type="file" class="form-control-file" id="preview_image"
-                                            name="preview_image" value=<?php echo set_value('preview_image'); ?>>
+                                        <label for="image">Image(400x300)</label>
+                                        <input type="file" class="form-control-file" id="image" name="image"
+                                            value=<?php echo set_value('image'); ?>>
                                     </div>
                                     <div class="form-group col-md-12 mt-4">
                                         <button type="submit"
@@ -312,43 +300,11 @@ if (isset($_SESSION['message'])) {
     <!-- Modal -->
     <script>
     $(document).ready(function() {
-        $('#intro').summernote({
-            placeholder: 'Enter the introduction',
+        $('#description').summernote({
+            placeholder: 'Enter the description',
             height: 110
         });
     });
-    </script>
-    <script>
-    $(document).ready(function() {
-        $("#summer-content").summernote({
-            placeholder: 'Place here the content',
-            height: 220,
-            callbacks: {
-                onImageUpload: function(files, editor, welEditable) {
-
-                    for (var i = files.length - 1; i >= 0; i--) {
-                        sendFile(files[i], this);
-                    }
-                }
-            }
-        });
-    });
-
-    function sendFile(file, el) {
-        var form_data = new FormData();
-        form_data.append('file', file);
-        $.ajax({
-            data: form_data,
-            type: "POST",
-            url: 'get_pictures',
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(url) {
-                $(el).summernote('editor.insertImage', url);
-            }
-        });
-    }
     </script>
 </body>
 

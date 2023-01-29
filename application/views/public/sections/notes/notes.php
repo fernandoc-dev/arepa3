@@ -33,15 +33,15 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Lesson</title>
+    <title>Notes</title>
 
 </head>
 
-<body class="stretched">
+<body class="stretched dark">
 
     <!-- Document Wrapper
 	============================================= -->
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="clearfix" style="background-color:#030303">
 
         <!-- Header
 		============================================= -->
@@ -83,9 +83,19 @@
                                             class="icon-line2-home"></i>
                                         <div>Home</div>
                                     </a></li>
-                                <li class="menu-item current"><a class="menu-link" href="#"><i
-                                            class="icon-book1"></i>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("algorithms")?>"><i
+                                            class="icon-code1"></i>
+                                        <div>Algorithms</div>
+                                    </a></li>
+                                <li class="menu-item current"><a class="menu-link"
+                                        href="<?php echo base_url("notes")?>"><i
+                                            class="icon-line2-notebook"></i>
                                         <div>Notes</div>
+                                    </a></li>
+                                <li class="menu-item"><a class="menu-link"
+                                        href="<?php echo base_url("blog")?>"><i class="icon-book2"></i>
+                                        <div>Blog</div>
                                     </a></li>
                             </ul>
 
@@ -99,46 +109,41 @@
 
         <!-- Content
 		============================================= -->
-        <section id="slider" class="slider-element min-vh-60 min-vh-md-100 include-header">
-            <div id="section-code" class="section m-0 page-section dark">
+        <section id="content" style="background-color:#030303">
+            <div class="content-wrap">
                 <div class="container clearfix">
-
-                    <div class="entry-title">
-                        <h1>My notes</h1>
-                    </div><!-- .entry-title end -->
+                    <h1><?php echo strtoupper($technology->title) ?></h1>
 
                     <!-- Posts
-							============================================= -->
-                    <div id="posts" class="row grid-container gutter-40">
+					============================================= -->
+                    <div id="posts" class="post-grid row grid-container gutter-30" data-layout="fitRows">
 
-                        <div class="entry col-12">
-                            <?php
-                            foreach ($notes as $note) {
-                                echo "
-                                <div class=\"grid-inner row no-gutters\">
-                                <div class=\"entry-image col-md-4\">
-                                    <a href=\"" . base_url('notes/') . $note->url . "\"
-                                        data-lightbox=\"image\"><img
-                                            src=\"" . base_url() . $note->image . "\"
-                                            alt=\"Standard Post with Image\"></a>
+                        <?php
+                        foreach ($notes as $note) {
+                        
+                            echo "
+                            <div class=\"entry col-lg-3 col-md-4 col-sm-6 col-12\">
+                            <div class=\"grid-inner\">
+                                <div class=\"entry-image\">
+                                    <a href=\"" . base_url("$technology->technology/$note->url") . "\"><img
+                                            src=\"" . base_url('') . $note->preview_image . "\" alt=\"" . $note->url . "\"></a>
                                 </div>
-                                <div class=\"col-md-8 pl-md-4\">
-                                    <div class=\"entry-title title-sm\">
-                                        <h2><a href=\"" . base_url('notes/') . $note->url . "\">" . $note->title . "</a>
-                                        </h2>
-                                    </div>
-                                    <div class=\"entry-content\">
-                                        <p>" . $note->introduction . "</p>
-                                        <a href=\"" . base_url('notes/') . $note->url . "\" class=\"more-link text-white\">Check it out</a>
-                                    </div>
+                                <div class=\"entry-title\">
+                                    <h2><a href=\"" . base_url("$technology->technology/$note->url") . "\">" . $note->title . "</a></h2>
                                 </div>
-                            </div>";
-                            }
-                            ?>
-                            
-                        </div>
+                                <div class=\"entry-meta mt-0\">
+                                    <span class=\"text-muted\">" . date("jS M Y", strtotime($note->created_at)) . "</span>
+                                </div>
+                                <div class=\"entry-content\">
+                                    <p class=\"mb-2\">" . $note->introduction .".</p>
+                                    <a href=\"" . base_url("$technology->technology/$note->url") . "\" class=\"mt-4\"><b>Read more</b></a>
+                                </div>
+                            </div>
+                        </div>";
+                        }
+                        ?>
 
-                    </div>
+                    </div><!-- #posts end -->
                 </div>
             </div>
         </section><!-- #content end -->

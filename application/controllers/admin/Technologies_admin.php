@@ -40,10 +40,10 @@ class Technologies_admin extends CI_Controller {
             $this->form_validation->set_rules(
                 'description',
                 'description',
-                'trim|required|max_length[16777215]',
+                'trim|required|max_length[255]',
                 array(
                     'required'      => 'The %s is required.',
-                    'max_length'     => 'The max lenght allowed for the %s is 16777215 characteres.'
+                    'max_length'     => 'The max lenght allowed for the %s is 255 characteres.'
                 )
             );
             $this->form_validation->set_rules(
@@ -59,7 +59,7 @@ class Technologies_admin extends CI_Controller {
             $this->form_validation->set_rules(
                 'technology',
                 'technology',
-                'trim|required|max_length[255]|is_unique[technologies.technology]',
+                'trim|required|max_length[50]|is_unique[technologies.technology]',
                 array(
                     'required'      => 'The %s is required.',
                     'max_length'    => 'The max lenght allowed for the %s is 255 characteres.',
@@ -124,10 +124,10 @@ class Technologies_admin extends CI_Controller {
             $this->form_validation->set_rules(
                 'description',
                 'description',
-                'trim|required|max_length[16777215]',
+                'trim|required|max_length[255]',
                 array(
                     'required' => 'The %s is required.',
-                    'max_length' => 'The max lenght allowed for the %s is 16777215 characteres.'
+                    'max_length' => 'The max lenght allowed for the %s is 255 characteres.'
                 )
             );
             if ($original_technology->title != $technology['title']) {
@@ -146,10 +146,10 @@ class Technologies_admin extends CI_Controller {
                 $this->form_validation->set_rules(
                     'technology',
                     'technology',
-                    'trim|required|max_length[255]|is_unique[technologies.technology]',
+                    'trim|required|max_length[50]|is_unique[technologies.technology]',
                     array(
                         'required' => 'The %s is required.',
-                        'max_length' => 'The max lenght allowed for the %s is 255 characteres.',
+                        'max_length' => 'The max lenght allowed for the %s is 50 characteres.',
                         'is_unique' => 'This technology is already registered, try using other.'
                     )
                 );
@@ -166,8 +166,8 @@ class Technologies_admin extends CI_Controller {
                     $config['upload_path'] = './assets/arepa3/images/technologies/';
                     $config['allowed_types'] = 'gif|jpg|png';
                     $config['max_size'] = 2048;
-                    $config['max_width'] = 2000;
-                    $config['max_height'] = 1326;
+                    $config['max_width'] = 400;
+                    $config['max_height'] = 300;
                     $config['file_name'] = substr($_FILES['image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
                     $config['overwrite'] = TRUE;
                     $this->load->library('upload', $config);

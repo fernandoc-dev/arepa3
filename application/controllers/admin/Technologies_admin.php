@@ -76,9 +76,9 @@ class Technologies_admin extends CI_Controller {
             // Upload image
             $config['upload_path']          = './assets/arepa3/images/technologies/';
             $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 2048;
-            $config['max_width']            = 2000;
-            $config['max_height']           = 1326;
+            $config['max_size']             = 80;
+            $config['max_width']            = 370;
+            $config['max_height']           = 200;
             $config['file_name']            = substr($_FILES['image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
             $config['overwrite']            = TRUE;
             $this->load->library('upload', $config);
@@ -165,9 +165,9 @@ class Technologies_admin extends CI_Controller {
                 if($_FILES['image']){
                     $config['upload_path'] = './assets/arepa3/images/technologies/';
                     $config['allowed_types'] = 'gif|jpg|png';
-                    $config['max_size'] = 2048;
-                    $config['max_width'] = 400;
-                    $config['max_height'] = 300;
+                    $config['max_size'] = 80;
+                    $config['max_width'] = 370;
+                    $config['max_height'] = 200;
                     $config['file_name'] = substr($_FILES['image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['image']['name'], -4);
                     $config['overwrite'] = TRUE;
                     $this->load->library('upload', $config);

@@ -20,7 +20,7 @@ class Home extends CI_Controller {
             $this->email->message($message);
             $this->email->send();
 
-			$this->set_modal_message->set_the_flash_variables_for_modal('Thanks!', 'I will read the message and reply it as soon as possible');
+			$this->set_modal_message->set_the_flash_variables_for_modal('Thanks!', 'I will read the message and reply it as soon as possible','Ok');
 			redirect(base_url());
 		} elseif ($this->input->server('REQUEST_METHOD') === 'GET') {
 			$this->data['articles']=$this->blog_model->read_articles();

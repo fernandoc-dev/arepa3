@@ -51,8 +51,8 @@
 
         <!-- Header
 		============================================= -->
-        <header id="header" class="transparent-header sticky-transparent" data-sticky-shrink="false">
-            <div id="header-wrap">
+        <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 
@@ -127,7 +127,7 @@
                 <div class="container">
                     <div class="slider-caption dark slider-caption-right">
                         <div class="align-items-end">
-                            <h2 class="font-primary ls5" data-animate="fadeIn">Python developer</h2>
+                            <h1 class="font-primary ls5" data-animate="fadeIn">Python developer</h1>
                             <p class="font-weight-light ls1 d-none d-sm-block" data-animate="fadeIn" data-delay="400">
                                 Fernando Carrillo.</p>
                         </div>
@@ -158,12 +158,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("fastapi")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/fastapi.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">FastAPI</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("fastapi")?>">FastAPI</a></h3>
                                         <p style="color:#AAA;">Modern and fast framework for building APIs with
                                             Python.<br> Strongest advantage: Automatic documentation and is becoming
                                             more and more popular.</p>
@@ -174,12 +174,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("flask")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/flask.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Flask</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("flask")?>">Flask</a></h3>
                                         <p style="color:#AAA;">Micro Framework to develop easily web
                                             applications.<br>Strongest advantage: It’s has a small and easy-to-extend
                                             core.</p>
@@ -190,12 +190,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("django")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/django.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Django</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("django")?>">Django</a></h3>
                                         <p style="color:#AAA;">Django is a high-level Python web framework that
                                             encourages rapid development and clean, pragmatic design.<br>Strongest
                                             advantage: Django is the heavyweight of Python's frameworks.</p>
@@ -213,13 +213,13 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("sql")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/sql.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">MySQL/PostgreSQL</h3>
-                                        <p style="color:#AAA;">Those are among the DBMSs most used worldwide.</p>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("sql")?>">SQL</a></h3>
+                                        <p style="color:#AAA;">The Database's language.</p>
                                     </div>
                                 </div>
                             </div>
@@ -227,12 +227,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("sql-alchemy")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/sqlalchemy.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">SQLAlchemy</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("sql-alchemy")?>">SQLAlchemy</a></h3>
                                         <p style="color:#AAA;">The most popular ORM for Python applications.</p>
                                     </div>
                                 </div>
@@ -241,12 +241,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("peewee")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/peewee.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Peewee</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("peewee")?>">Peewee</a></h3>
                                         <p style="color:#AAA;">This ORM is an excellent alternative for operating the
                                             models in Python applications.</p>
                                     </div>
@@ -266,12 +266,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("git")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/github.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Git/Github</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("git")?>">Git/Github</a></h3>
                                         <p style="color:#AAA;">This is a must nowadays for collaborative teams. </p>
                                     </div>
                                 </div>
@@ -280,12 +280,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("docker")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/docker.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Docker</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("docker")?>">Docker</a></h3>
                                         <p style="color:#AAA;">Standardized environments using local containers permit
                                             setting the developing environment in minutes.</p>
                                     </div>
@@ -295,12 +295,12 @@
                             <div class="col-sm-6 col-lg-4">
                                 <div class="feature-box fbox-plain">
                                     <div class="fbox-icon">
-                                        <a href="#"><img
+                                        <a href="<?php echo base_url("jenkins")?>"><img
                                                 src="<?php echo base_url("assets/arepa3/images/home/icons/jenkins.png") ?>"
                                                 alt=""></a>
                                     </div>
                                     <div class="fbox-content">
-                                        <h3 class="font-weight-normal ls2" style="color: #FFF">Jenkins</h3>
+                                        <h3 class="font-weight-normal ls2" style="color: #FFF"><a class="text-white" href="<?php echo base_url("jenkins")?>">Jenkins</a></h3>
                                         <p style="color:#AAA;">The most popular continuous integration server on the
                                             market.</p>
                                     </div>
@@ -349,8 +349,10 @@
                                     <h2 class="font-secondary">I'd appreciate a message</h2>
                                     <span><i class="icon-email mr-2"></i>Email: fer@fernandoc.dev</span>
                                 </div>
-                                <form class="row mb-0" id="contact" name="contact" action="<?php echo base_url("")?>"
+                                <form class="row mb-0" id="contact" name="contact" action="<?php echo base_url()?>"
                                     method="post">
+                                    <input type="hidden" name="<?php echo ($this->security->get_csrf_token_name()); ?>"
+                                        value="<?php echo ($this->security->get_csrf_hash()); ?>" />
                                     <div class="col-md-6 form-group">
                                         <input type="text" id="name" name="name" value=""
                                             class="sm-form-control border-form-control required" placeholder="Name"

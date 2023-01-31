@@ -46,7 +46,7 @@
         <!-- Header
 		============================================= -->
         <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
-            <div id="header-wrap">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 
@@ -135,7 +135,7 @@
                                     <span class=\"text-muted\">" . date("jS M Y", strtotime($note->created_at)) . "</span>
                                 </div>
                                 <div class=\"entry-content\">
-                                    <p class=\"mb-2\">" . $note->introduction .".</p>
+                                    <p class=\"mb-2\">" . $note->introduction . "</p>
                                     <a href=\"" . base_url("$technology->technology/$note->url") . "\" class=\"mt-4\"><b>Read more</b></a>
                                 </div>
                             </div>

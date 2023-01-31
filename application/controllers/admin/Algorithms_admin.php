@@ -69,34 +69,34 @@ class Algorithms_admin  extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/algorithms/create');
                 unset($_SESSION['message']);
             }else{
             // Upload image
             $config['upload_path']          = './assets/arepa3/images/algorithms/';
             $config['allowed_types']        = 'gif|jpg|png';
-            $config['max_size']             = 2048;
-            $config['max_width']            = 2000;
-            $config['max_height']           = 1326;
+            $config['max_size']             = 120;
+            $config['max_width']            = 820;
+            $config['max_height']           = 250;
             $config['file_name']            = substr($_FILES['main_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['main_image']['name'], -4);
             $config['overwrite']            = TRUE;
             $this->load->library('upload', $config);
 
             if ( ! $this->upload->do_upload('main_image')){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                 $this->load->view('admin/sections/algorithms/create');
                 unset($_SESSION['message']);
             }else{
                 $algorithm['main_image']='assets/arepa3/images/algorithms/' . $config['file_name'];
             }
-
-            $config['max_width']            = 500;
-            $config['max_height']           = 280;
+            $config['max_size']             = 40;
+            $config['max_width']            = 260;
+            $config['max_height']           = 150;
             $config['file_name']            = substr($_FILES['preview_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['preview_image']['name'], -4);
             $this->upload->initialize($config);
             if ( ! $this->upload->do_upload('preview_image')){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                 $this->load->view('admin/sections/algorithms/create');
                 unset($_SESSION['message']);
             }else{
@@ -105,10 +105,10 @@ class Algorithms_admin  extends CI_Controller {
              // Upload image
 
 			if(!$this->algorithms_model->create($algorithm)){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post','Ok');
                 redirect(base_url('admin/algorithms_admin'));
             }else{
-                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created','Ok');
                 redirect(base_url('admin/algorithms_admin'));
             }
             }
@@ -116,7 +116,7 @@ class Algorithms_admin  extends CI_Controller {
     }
     public function update($id = NULL)
     {
-        if (!isset($_SESSION['user'])) {
+        if (!isset($_SESSION['user'])) {    
             $_SESSION['next_page'] = 'admin/algorithms_admin';
             redirect(base_url('login'));
         }
@@ -169,7 +169,7 @@ class Algorithms_admin  extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/algorithms/update');
                 unset($_SESSION['message']);
             } else {
@@ -177,15 +177,15 @@ class Algorithms_admin  extends CI_Controller {
                 if($_FILES['main_image']){
                     $config['upload_path'] = './assets/arepa3/images/algorithms/';
                     $config['allowed_types'] = 'gif|jpg|png';
-                    $config['max_size'] = 2048;
-                    $config['max_width'] = 2000;
-                    $config['max_height'] = 1326;
+                    $config['max_size']     = 120;
+                    $config['max_width']    = 820;
+                    $config['max_height']   = 250;
                     $config['file_name'] = substr($_FILES['main_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['main_image']['name'], -4);
                     $config['overwrite'] = TRUE;
                     $this->load->library('upload', $config);
     
                     if (!$this->upload->do_upload('main_image')) {
-                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                         $this->load->view('admin/sections/algorithms/update');
                         unset($_SESSION['message']);
                     } else {
@@ -193,12 +193,13 @@ class Algorithms_admin  extends CI_Controller {
                     }
                 }
                 if($_FILES['preview_image']){
-                    $config['max_width'] = 500;
-                    $config['max_height'] = 280;
+                    $config['max_size']     = 40;
+                    $config['max_width']    = 370;
+                    $config['max_height']   = 215;
                     $config['file_name'] = substr($_FILES['preview_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['preview_image']['name'], -4);
                     $this->upload->initialize($config);
                     if (!$this->upload->do_upload('preview_image')) {
-                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                         $this->load->view('admin/sections/algorithms/update');
                         unset($_SESSION['message']);
                     } else {
@@ -208,10 +209,10 @@ class Algorithms_admin  extends CI_Controller {
                 // Upload image
 
                 if (!$this->algorithms_model->update($algorithm)) {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post','Ok');
                     redirect(base_url('admin/algorithms_admin'));
                 } else {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated','Ok');
                     redirect(base_url('admin/algorithms_admin'));
                 }
             }
@@ -223,9 +224,9 @@ class Algorithms_admin  extends CI_Controller {
 			redirect(base_url('login'));
 		}
         if($this->algorithms_model->delete($id)){
-            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully','Ok');
         }else{
-            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted','Ok');
         }
         redirect(base_url('admin/algorithms_admin'));
     }

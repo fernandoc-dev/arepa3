@@ -20,7 +20,7 @@ class Blog extends CI_Controller {
 			$this->data['articles']=$this->blog_model->read_articles_links();
 			$this->load->view('public/sections/blog/article',$this->data);
 		}else{
-			$this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'We couldn\'t find the article you are looking for');
+			$this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'We couldn\'t find the article you are looking for'),'Ok';
 			redirect(base_url('blog'));
 		}
 		

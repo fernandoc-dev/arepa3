@@ -153,12 +153,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="big_image">Main Image(2000x1326)</label>
+                                        <label for="big_image">Main Image(820x250  MAX 120KB)</label>
                                         <input type="file" class="form-control-file" id="main_image" name="main_image"
                                             value=<?php echo set_value('main_image'); ?>>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="image">Preview Image(500x280)</label>
+                                        <label for="image">Preview Image(370x215 MAX 40KB)</label>
                                         <input type="file" class="form-control-file" id="preview_image"
                                             name="preview_image" value=<?php echo set_value('preview_image'); ?>>
                                     </div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=5e5e5e") ?>" type="text/css" />
 
     <!-- highlight -->
-    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/highlight/styles/vs.min.css") ?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/highlight/styles/ferc.dev.css") ?>">
 
     <link rel="shortcut icon" href="<?php echo base_url("assets/arepa3/images/common/favicon.png") ?>" />
 
@@ -50,7 +50,7 @@
         <!-- Header
 		============================================= -->
         <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
-            <div id="header-wrap">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 
@@ -175,14 +175,14 @@
                                         <div class=\"grid-inner row align-items-center gutter-20\">
                                             <div class=\"col-4\">
                                                 <div class=\"entry-image\">
-                                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\"><img
-                                                            src=\"" . base_url() . $algorithm->preview_image . "\" 
+                                                    <a href=\"" . base_url("algorithms/$algorithm->url") . "\"><img
+                                                            src=\"" . base_url($algorithm->preview_image) . "\" 
                                                             alt=\"Algorithms Single\"></a>
                                                 </div>
                                             </div>
                                             <div class=\"col-8\">
                                                 <div class=\"entry-title title-xs\">
-                                                    <h3><a href=\"" . base_url('algorithms/') . $algorithm->url . "\">" . $algorithm->title . "</a></h3>
+                                                    <h3><a href=\"" . base_url("algorithms/$algorithm->url") . "\">" . $algorithm->title . "</a></h3>
                                                 </div>
                                                 <div class=\"entry-meta\">
                                                     <ul>
@@ -216,7 +216,7 @@
                                         <?php
                                             foreach ($algorithms as $algorithm) {
                                                 if($algorithm->url!=$current_algorithm->url){
-                                                    echo "<li><a style=\"color:white\" href=\"" . base_url('algorithms/') . $algorithm->url . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $algorithm->title . "</a></li>";
+                                                    echo "<li><a style=\"color:white\" href=\"" . base_url("algorithms/$algorithm->url") . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $algorithm->title . "</a></li>";
                                                 }
                                             }
                                         ?>
@@ -298,9 +298,7 @@
 
     <!-- Highlight -->
     <script src="<?php echo base_url("assets/arepa3/others/highlight/highlight.min.js"); ?>"></script>
-    <script>
-    hljs.highlightAll();
-    </script>
+    <script>hljs.highlightAll();</script>
 
     <script>
     jQuery(window).scroll(function() {

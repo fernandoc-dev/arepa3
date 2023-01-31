@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function index()
 	{
-
 		if ($this->input->server('REQUEST_METHOD') === 'POST') {
 			$data = $this->input->post(NULL, TRUE);
 			if ($data['username']=='user' & $data['password']=='password-user') {
@@ -14,6 +13,9 @@ class Login extends CI_Controller {
 				}else{
 					redirect(base_url("admin/blog_admin"));
 				}
+			}else{
+				$this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'Wrong user or password','Ok');
+				redirect(base_url("login"));
 			}
 		}
 		if ($this->input->server('REQUEST_METHOD') === 'GET') {

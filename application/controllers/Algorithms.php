@@ -20,7 +20,7 @@ class Algorithms extends CI_Controller {
 			$this->data['algorithms']=$this->algorithms_model->read_algorithms_links();
 			$this->load->view('public/sections/algorithms/algorithm',$this->data);
 		}else{
-			$this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'We couldn\'t find the algorithm you are looking for');
+			$this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'We couldn\'t find the algorithm you are looking for','Ok');
 			redirect(base_url('algorithms'));
 		}
 		

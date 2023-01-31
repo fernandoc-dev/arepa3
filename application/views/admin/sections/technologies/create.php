@@ -138,15 +138,14 @@
                                             placeholder="Enter title" value="<?php echo set_value('title') ?>">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="exampleInputEmail1">Description</label>
+                                        <label for="description">Description</label>
                                         <div style="background-color:#c2c0c0;color:#474747;">
-                                            <textarea class="form-control text-black" id="description"
-                                                name="description"
+                                            <textarea class="form-control text-black" id="description" name="description"
                                                 placeholder="Enter description"><?php echo set_value('description'); ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="big_image">Image(400x300)</label>
+                                        <label for="big_image">Image(370x200 MAX 80KB)</label>
                                         <input type="file" class="form-control-file" id="image" name="image"
                                             value=<?php echo set_value('image'); ?>>
                                     </div>
@@ -305,35 +304,11 @@ if (isset($_SESSION['message'])) {
     </script>
     <script>
     $(document).ready(function() {
-        $("#summer-content").summernote({
+        $("#description").summernote({
             placeholder: 'Place here the content',
-            height: 220,
-            callbacks: {
-                onImageUpload: function(files, editor, welEditable) {
-
-                    for (var i = files.length - 1; i >= 0; i--) {
-                        sendFile(files[i], this);
-                    }
-                }
-            }
+            height: 100,
         });
     });
-
-    function sendFile(file, el) {
-        var form_data = new FormData();
-        form_data.append('file', file);
-        $.ajax({
-            data: form_data,
-            type: "POST",
-            url: 'get_pictures',
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(url) {
-                $(el).summernote('editor.insertImage', url);
-            }
-        });
-    }
     </script>
 </body>
 

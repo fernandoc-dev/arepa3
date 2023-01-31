@@ -46,7 +46,7 @@
         <!-- Header
 		============================================= -->
         <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
-            <div id="header-wrap">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 
@@ -125,18 +125,18 @@
                             <div class=\"entry col-lg-3 col-md-4 col-sm-6 col-12\">
                             <div class=\"grid-inner\">
                                 <div class=\"entry-image\">
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\"><img
-                                            src=\"" . base_url('') . $algorithm->preview_image . "\" alt=\"" . $algorithm->url . "\"></a>
+                                    <a href=\"" . base_url("algorithms/") . $algorithm->url . "\"><img
+                                            src=\"" . base_url($algorithm->preview_image) . "\" alt=\"" . $algorithm->url . "\"></a>
                                 </div>
                                 <div class=\"entry-title\">
-                                    <h2><a href=\"" . base_url('algorithms/') . $algorithm->url . "\">" . $algorithm->title . "</a></h2>
+                                    <h2><a href=\"" . base_url("algorithms/$algorithm->url") . "\">" . $algorithm->title . "</a></h2>
                                 </div>
                                 <div class=\"entry-meta mt-0\">
                                     <span class=\"text-muted\">" . date("jS M Y", strtotime($algorithm->created_at)) . "</span>
                                 </div>
                                 <div class=\"entry-content\">
-                                    <p class=\"mb-2\">" . $algorithm->introduction .".</p>
-                                    <a href=\"" . base_url('algorithms/') . $algorithm->url . "\" class=\"mt-4\"><b>Read more</b></a>
+                                    <p class=\"mb-2\">" . $algorithm->introduction . "</p>
+                                    <a href=\"" . base_url("algorithms/$algorithm->url") . "\" class=\"mt-4\"><b>Read more</b></a>
                                 </div>
                             </div>
                         </div>";

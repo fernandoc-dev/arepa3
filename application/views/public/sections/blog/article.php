@@ -50,7 +50,7 @@
         <!-- Header
 		============================================= -->
         <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
-            <div id="header-wrap">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 
@@ -147,8 +147,8 @@
                                     <!-- Entry Image
 									============================================= -->
                                     <div class="entry-image">
-                                        <img src="<?php echo base_url("") . $current_article->main_image ?>"
-                                            alt="Blog Single"></a>
+                                        <img src="<?php echo base_url("$current_article->main_image")?>"
+                                            alt=""></a>
                                     </div><!-- .entry-image end -->
 
                                     <!-- Entry Content
@@ -175,14 +175,14 @@
                                         <div class=\"grid-inner row align-items-center gutter-20\">
                                             <div class=\"col-4\">
                                                 <div class=\"entry-image\">
-                                                    <a href=\"" . base_url('blog/') . $article->url . "\"><img
-                                                            src=\"" . base_url() . $article->preview_image . "\" 
+                                                    <a href=\"" . base_url("blog/$article->url")  . "\"><img
+                                                            src=\"" . base_url($article->preview_image) . "\" 
                                                             alt=\"Blog Single\"></a>
                                                 </div>
                                             </div>
                                             <div class=\"col-8\">
                                                 <div class=\"entry-title title-xs\">
-                                                    <h3><a href=\"" . base_url('blog/') . $article->url . "\">" . $article->title . "</a></h3>
+                                                    <h3><a href=\"" . base_url("blog/$article->url") . "\">" . $article->title . "</a></h3>
                                                 </div>
                                                 <div class=\"entry-meta\">
                                                     <ul>
@@ -216,7 +216,7 @@
                                         <?php
                                             foreach ($articles as $article) {
                                                 if($article->url!=$current_article->url){
-                                                    echo "<li><a style=\"color:white\" href=\"" . base_url('blog/') . $article->url . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $article->title . "</a></li>";
+                                                    echo "<li><a style=\"color:white\" href=\"" . base_url("blog/$article->url") . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $article->title . "</a></li>";
                                                 }
                                             }
                                         ?>

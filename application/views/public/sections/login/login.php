@@ -46,7 +46,7 @@
         <!-- Header
 		============================================= -->
         <header id="header" class="transparent-header sticky-transparent dark" data-sticky-shrink="false">
-            <div id="header-wrap">
+            <div id="header-wrap" style="background-color:#030303">
                 <div class="container">
                     <div class="header-row">
 

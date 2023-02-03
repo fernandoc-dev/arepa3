@@ -37,7 +37,7 @@
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithm</title>
+    <title><?php echo $current_article->title?></title>
 
 </head>
 

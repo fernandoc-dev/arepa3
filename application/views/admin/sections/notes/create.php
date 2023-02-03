@@ -348,7 +348,7 @@ if (isset($_SESSION['message'])) {
         $.ajax({
             data: form_data,
             type: "POST",
-            url: 'get_pictures',
+            url: '<?php echo(base_url('admin/notes_admin/get_pictures'))?>',
             cache: false,
             contentType: false,
             processData: false,

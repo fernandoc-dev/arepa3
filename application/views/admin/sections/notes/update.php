@@ -147,13 +147,13 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
                                             placeholder="Enter title"
                                             value="<?php if(set_value('title')){echo set_value('title');}else{echo $note->title;} ?>">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="exampleInputEmail1">URL</label>
                                         <input type="text" class="form-control" id="url" name="url"
                                             placeholder="notes/url"
@@ -358,7 +358,7 @@ if (isset($_SESSION['message'])) {
         $.ajax({
             data: form_data,
             type: "POST",
-            url: 'get_pictures',
+            url: '<?php echo(base_url('admin/notes_admin/get_pictures'))?>',
             cache: false,
             contentType: false,
             processData: false,

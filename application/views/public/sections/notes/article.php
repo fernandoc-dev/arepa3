@@ -31,13 +31,13 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/canvas/css/colors.php?color=5e5e5e") ?>" type="text/css" />
 
     <!-- highlight -->
-    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/highlight/styles/ferc.dev.css") ?>">
+    <link rel="stylesheet" href="<?php echo base_url("assets/arepa3/others/highlight/styles/ferc.dev.grey.css") ?>">
 
     <link rel="shortcut icon" href="<?php echo base_url("assets/arepa3/images/common/favicon.png") ?>" />
 
     <!-- Document Title
 	============================================= -->
-    <title>Algorithm</title>
+    <title><?php echo $current_note->title?></title>
 
 </head>
 
@@ -95,9 +95,9 @@
                                         href="<?php echo base_url("notes")?>"><i class="icon-line2-notebook"></i>
                                         <div>Notes</div>
                                     </a></li>
-                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("notes")?>"><i
+                                <li class="menu-item"><a class="menu-link" href="<?php echo base_url("blog")?>"><i
                                             class="icon-book2"></i>
-                                        <div>Notes</div>
+                                        <div>Blog</div>
                                     </a></li>
                             </ul>
 

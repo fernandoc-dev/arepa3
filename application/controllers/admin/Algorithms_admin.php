@@ -33,7 +33,7 @@ class Algorithms_admin  extends CI_Controller {
             $this->load->view('admin/sections/algorithms/create');
 
         } elseif ($this->input->server('REQUEST_METHOD') === 'POST') {
-			$algorithm = $this->input->post(array('title','url','introduction','content'), TRUE);
+			$algorithm = $this->input->post(array('title','url','introduction','content'), FALSE);
             $timestamp = new DateTime();
 
             // Validation form
@@ -128,7 +128,7 @@ class Algorithms_admin  extends CI_Controller {
             $this->load->view('admin/sections/algorithms/update',$this->data);
 
         } elseif ($this->input->server('REQUEST_METHOD') === 'POST') {
-            $algorithm = $this->input->post(array('id','title','url','introduction','content'), TRUE);
+            $algorithm = $this->input->post(array('id','title','url','introduction','content'), FALSE);
             $original_algorithm = $this->algorithms_model->read_algorithm_by_id($algorithm['id']);
             $timestamp = new DateTime();
 

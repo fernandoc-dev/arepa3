@@ -33,7 +33,7 @@ class Blog_admin extends CI_Controller {
             $this->load->view('admin/sections/blog/create');
 
         } elseif ($this->input->server('REQUEST_METHOD') === 'POST') {
-			$article = $this->input->post(array('title','url','introduction','content'), TRUE);
+			$article = $this->input->post(array('title','url','introduction','content'), FALSE);
             $timestamp = new DateTime();
 
             // Validation form
@@ -69,7 +69,7 @@ class Blog_admin extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/blog/create');
                 unset($_SESSION['message']);
             }else{
@@ -84,7 +84,7 @@ class Blog_admin extends CI_Controller {
             $this->load->library('upload', $config);
 
             if ( ! $this->upload->do_upload('main_image')){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                 $this->load->view('admin/sections/blog/create');
                 unset($_SESSION['message']);
             }else{
@@ -96,7 +96,7 @@ class Blog_admin extends CI_Controller {
             $config['file_name']            = substr($_FILES['preview_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['preview_image']['name'], -4);
             $this->upload->initialize($config);
             if ( ! $this->upload->do_upload('preview_image')){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                 $this->load->view('admin/sections/blog/create');
                 unset($_SESSION['message']);
             }else{
@@ -105,10 +105,10 @@ class Blog_admin extends CI_Controller {
              // Upload image
 
 			if(!$this->blog_model->create($article)){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post','Ok');
                 redirect(base_url('admin/blog_admin'));
             }else{
-                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created','Ok');
                 redirect(base_url('admin/blog_admin'));
             }
             }
@@ -128,7 +128,7 @@ class Blog_admin extends CI_Controller {
             $this->load->view('admin/sections/blog/update',$this->data);
 
         } elseif ($this->input->server('REQUEST_METHOD') === 'POST') {
-            $article = $this->input->post(array('id','title','url','introduction','content'), TRUE);
+            $article = $this->input->post(array('id','title','url','introduction','content'), FALSE);
             $original_article = $this->blog_model->read_article_by_id($article['id']);
             $timestamp = new DateTime();
 
@@ -169,7 +169,7 @@ class Blog_admin extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/blog/update');
                 unset($_SESSION['message']);
             } else {
@@ -185,7 +185,7 @@ class Blog_admin extends CI_Controller {
                     $this->load->library('upload', $config);
     
                     if (!$this->upload->do_upload('main_image')) {
-                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                         $this->load->view('admin/sections/blog/update');
                         unset($_SESSION['message']);
                     } else {
@@ -198,7 +198,7 @@ class Blog_admin extends CI_Controller {
                     $config['file_name'] = substr($_FILES['preview_image']['name'], 0, -4) . $timestamp->getTimestamp() . substr($_FILES['preview_image']['name'], -4);
                     $this->upload->initialize($config);
                     if (!$this->upload->do_upload('preview_image')) {
-                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                         $this->load->view('admin/sections/blog/update');
                         unset($_SESSION['message']);
                     } else {
@@ -208,10 +208,10 @@ class Blog_admin extends CI_Controller {
                 // Upload image
 
                 if (!$this->blog_model->update($article)) {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post','Ok');
                     redirect(base_url('admin/blog_admin'));
                 } else {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated','Ok');
                     redirect(base_url('admin/blog_admin'));
                 }
             }
@@ -223,9 +223,9 @@ class Blog_admin extends CI_Controller {
 			redirect(base_url('login'));
 		}
         if($this->blog_model->delete($id)){
-            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully','Ok');
         }else{
-            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted','Ok');
         }
         redirect(base_url('admin/blog_admin'));
     }

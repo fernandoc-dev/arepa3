@@ -5,6 +5,7 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		if ($this->input->server('REQUEST_METHOD') === 'POST') {
+			$this->visits->count_visit("login_post");
 			$data = $this->input->post(NULL, TRUE);
 			if ($data['username']=='user' & $data['password']=='password-user') {
 				$_SESSION['user'] = True;
@@ -19,11 +20,13 @@ class Login extends CI_Controller {
 			}
 		}
 		if ($this->input->server('REQUEST_METHOD') === 'GET') {
+			$this->visits->count_visit("login_get");
 			$this->load->view('public/sections/login/login');
 		}
 	}
 	public function out()
 	{
+		$this->visits->count_visit("logout");
 		session_destroy();
 		redirect(base_url());
 	}

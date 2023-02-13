@@ -173,14 +173,14 @@
                                         <div class=\"grid-inner row align-items-center gutter-20\">
                                             <div class=\"col-4\">
                                                 <div class=\"entry-image\">
-                                                    <a href=\"" . base_url("notes/$note->url") . "\"><img
+                                                    <a href=\"" . base_url("$note->technology/$note->url") . "\"><img
                                                             src=\"" . base_url($note->preview_image) . "\" 
                                                             alt=\"Notes Single\"></a>
                                                 </div>
                                             </div>
                                             <div class=\"col-8\">
                                                 <div class=\"entry-title title-xs\">
-                                                    <h3><a href=\"" . base_url("notes/$note->url") . "\">" . $note->title . "</a></h3>
+                                                    <h3><a href=\"" . base_url("$note->technology/$note->url") . "\">" . $note->title . "</a></h3>
                                                 </div>
                                                 <div class=\"entry-meta\">
                                                     <ul>
@@ -214,7 +214,7 @@
                                         <?php
                                             foreach ($notes as $note) {
                                                 if($note->url!=$current_note->url){
-                                                    echo "<li><a style=\"color:white\" href=\"" . base_url("notes/$note->url") . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $note->title . "</a></li>";
+                                                    echo "<li><a style=\"color:white\" href=\"" . base_url("$note->technology/$note->url") . "\"><i class=\"icon-arrow-alt-circle-right1\"></i>" . $note->title . "</a></li>";
                                                 }
                                             }
                                         ?>

@@ -329,7 +329,7 @@
                                     and opportunities to learn and grow as a developer. Thank you for visiting my
                                     website!</p>
                                 <a target="_blank"
-                                    href="<?php echo base_url("assets/arepa3/others/Backend developer - Fernando Carrillo.pdf")?>"
+                                    href="<?php echo base_url("backend-developer-fernando-carrillo.pdf")?>"
                                     class="button button-large button-border button-black button-dark ml-0"><i
                                         class="icon-line-cloud-download"></i> Download CV</a>
                             </div>

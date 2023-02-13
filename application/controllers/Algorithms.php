@@ -10,6 +10,7 @@ class Algorithms extends CI_Controller {
     }
 	public function index()
 	{
+		$this->visits->count_visit("algorithms");
 		$this->data['algorithms']=$this->algorithms_model->read_algorithms();
 		$this->load->view('public/sections/algorithms/algorithms',$this->data);
 	}
@@ -17,6 +18,7 @@ class Algorithms extends CI_Controller {
 	{
 		// The user visit the url: /algorithms/algorithm
 		if($this->data['current_algorithm']=$this->algorithms_model->read_algorithm($url)){
+			$this->visits->count_visit("algorithms/$url");
 			$this->data['algorithms']=$this->algorithms_model->read_algorithms_links();
 			$this->load->view('public/sections/algorithms/algorithm',$this->data);
 		}else{

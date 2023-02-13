@@ -33,14 +33,14 @@ code.hljs{
 .hljs-variable{
     color:rgb(211, 212, 211)
 }
-.hljs-name{
-    color:#00f
+.hljs-name{/*HTML tag Name*/
+    color:rgb(191, 243, 217)
 }
 .hljs-selector-tag{
-    color:#00f
+    color:rgb(217, 255, 0)
 }
-.hljs-tag{
-    color:#00f
+.hljs-tag{/*Open and Close sign HTML*/
+    color:rgb(191, 243, 217)
 }
 .hljs-addition{
     color:#b5b535
@@ -65,16 +65,16 @@ code.hljs{
     color:#8e8e8b
 }
 .hljs-deletion{
-    color:#2b91af
+    color:#0aeb37
 }
-.hljs-meta{
-    color:#2b91af
+.hljs-meta{/*DOCTYPE HTML*/
+    color:rgb(191, 243, 217)
 }
 .hljs-selector-attr{
-    color:#2b91af
+    color:#af2ba4
 }
 .hljs-selector-pseudo{
-    color:#2b91af
+    color:#183b1a
 }
 .hljs-doctag{
     color:grey

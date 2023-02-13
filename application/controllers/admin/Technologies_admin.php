@@ -69,7 +69,7 @@ class Technologies_admin extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/technologies/create');
                 unset($_SESSION['message']);
             }else{
@@ -84,7 +84,7 @@ class Technologies_admin extends CI_Controller {
             $this->load->library('upload', $config);
 
             if ( ! $this->upload->do_upload('image')){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                 $this->load->view('admin/sections/technologies/create');
                 unset($_SESSION['message']);
             }else{
@@ -93,10 +93,10 @@ class Technologies_admin extends CI_Controller {
             // Upload image
 
 			if(!$this->technologies_model->create($technology)){
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem creating the post','Ok');
                 redirect(base_url('admin/technologies_admin'));
             }else{
-                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created');
+                $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully created','Ok');
                 redirect(base_url('admin/technologies_admin'));
             }
             }
@@ -157,7 +157,7 @@ class Technologies_admin extends CI_Controller {
             // Validation form
 
             if ($this->form_validation->run() == FALSE) {
-                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors());
+                $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', validation_errors(),'Ok');
                 $this->load->view('admin/sections/technologies/update');
                 unset($_SESSION['message']);
             } else {
@@ -173,7 +173,7 @@ class Technologies_admin extends CI_Controller {
                     $this->load->library('upload', $config);
     
                     if (!$this->upload->do_upload('image')) {
-                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors());
+                        $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', $this->upload->display_errors(),'Ok');
                         $this->load->view('admin/sections/technologies/update');
                         unset($_SESSION['message']);
                     } else {
@@ -183,10 +183,10 @@ class Technologies_admin extends CI_Controller {
                 // Upload image
 
                 if (!$this->technologies_model->update($technology)) {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Sorry!', 'It was a problem updating the post','Ok');
                     redirect(base_url('admin/technologies_admin'));
                 } else {
-                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated');
+                    $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The post was successfully updated','Ok');
                     redirect(base_url('admin/technologies_admin'));
                 }
             }
@@ -198,9 +198,9 @@ class Technologies_admin extends CI_Controller {
 			redirect(base_url('login'));
 		}
         if($this->technologies_model->delete($id)){
-            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Good news!', 'The item was deleted successfully','Ok');
         }else{
-            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted');
+            $this->set_modal_message->set_the_flash_variables_for_modal('Sorry', 'The item could not be deleted','Ok');
         }
         redirect(base_url('admin/technologies_admin'));
     }
